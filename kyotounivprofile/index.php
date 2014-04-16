@@ -4,19 +4,46 @@
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 		<style type="text/css">
+			@charset "utf-8";
+			html, body {
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+
 			body {
-				-webkit-text-size-adjust: 100%;
+				font-family: Arial, sans-serif;
+				line-height: 1.5;
+				font-size: 16px;
+				background: #fff;
+				padding:5px;
+				color: #000;
+				word-wrap: break-word;
+				-webkit-text-size-adjust: none;
 			}
 
 			input {
 				width: 90%;
-				height: 35px;
-				margin: 5px auto;
+				height: 30px;
+				margin-top: 0;
+				margin-bottom: 10px;
+				margin-left: auto;
+				margin-right: auto;
 				padding: 2px 5px;
 				border: 1px solid #ddd;
 				border-radius: 5px;
 				display: block;
-				font-size: 25px;
+				font-size: 20px;
+				vertical-align: middle;
+			}
+
+			p {
+				font-size: 20px;
+			}
+
+			p.right {
+				text-align: right;
+				font-size: 16px;
 			}
 
 			input[type="submit"] {
