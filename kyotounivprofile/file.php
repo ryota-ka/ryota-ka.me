@@ -168,5 +168,5 @@ EOT;
 	header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
 	echo $file;
 } else {
-	echo '入力内容が不正です';
+	echo 'invalid values!';
 }

@@ -35,11 +35,6 @@
 				margin: 5px 0;
 			}
 
-			a {
-				color: #bbb;
-				text-decoration: underline;
-			}
-
 			hr {
 				border: 0;
 				border-bottom: 1px dashed #ccc;
@@ -99,10 +94,6 @@
 				color: #fff;
 			}
 
-			input[disabled="disabled"] {
-				background: #bbb;
-			}
-
 			#policy {
 				font-size: 12px;
 				color: #bbb;
@@ -116,65 +107,23 @@
 				margin-bottom: 0;
 			}
 		</style>
-		<script type="text/javascript">
-			function checkValid() {
-				var ecsid = document.getElementById('input-ecsid');
-				var localpart = document.getElementById('input-localpart');
-				var submit = document.getElementById('input-submit');
-				var isEcsIdValid, isLocalpartValid;
-
-				if (ecsid.value.match(/^a0[0-9]{6}$/)) {
-					ecsid.style.backgroundColor = '#cfc';
-					ecsid.style.borderColor = '#8f8';
-					ecsid.style.color = '#666';
-					isEcsIdValid = true;
-				} else if (ecsid.value !== '') {
-					ecsid.style.backgroundColor = '#fcc';
-					ecsid.style.borderColor = '#f88';
-					ecsid.style.color = '#d00';
-					isEcsIdValid = false;
-				}
-
-				if (localpart.value.match(/^[a-z]+\.[a-z]+\.[a-z0-9]{3}$/)) {
-					localpart.style.backgroundColor = '#cfc';
-					localpart.style.borderColor = '#8f8';
-					localpart.style.color = '#666';
-					isLocalpartValid = true;
-				} else if (localpart.value !== '') {
-					localpart.style.backgroundColor = '#fcc';
-					localpart.style.borderColor = '#f88';
-					localpart.style.color = '#d00';
-					isLocalpartValid = false;
-				}
-
-				if ((isEcsIdValid && isLocalpartValid) && submit.attributes.disabled) {
-					submit.removeAttribute('disabled');
-				} else {
-					submit.attributes.disabled = 'disabled';
-				}
-			}
-		</script>
         <title>KyotoUnivProfile</title>
     </head>
     <body>
 		<h1>KyotoUnivProfile</h1>
-		<p class="right">by <a href="http://twitter.com/invendu">Ryota Kameoka</a></p>
-		<p>入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
-		<hr />
-		<p>ads here ...</p>
+		<p class="right">by Ryota Kameoka</p>
+		<p></p>
 		<hr />
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
-			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onchange="checkValid()" />
+			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onchange="checkEcsId()" />
 			<p>学生用メールアドレス</p>
-			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onchange="checkValid()" />
+			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onchange="checkLocalpart()" />
 			<p class="right">@st.kyoto-u.ac.jp</p>
 			<p>メールの表示名 (任意)</p>
 			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など" />
-			<input id="input-submit" type="submit" value="ダウンロード" disabled="disabled" />
+			<input type="submit" value="ダウンロード" />
 		</form>
-		<hr />
-		<p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">ダウンロード後の手順は<a href="./install.php" style="color: #666;">こちら</a></p>
 		<hr />
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
