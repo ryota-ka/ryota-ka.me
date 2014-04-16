@@ -1,10 +1,19 @@
 <?php
 
-$ecsid = 'a0127689';
-$name = '亀岡 亮太';
-$localpart = 'kameoka.ryota.53x';
+$ecsid = trim(filter_input(INPUT_POST, 'ecsid'));
+$name = trim(filter_input(INPUT_POST, 'name')) || '';
+$localpart = trim(filter_input(INPUT_POST, 'localpart'));
 
-$file = <<<EOT
+$errors = 0;
+
+if (!preg_match('/^a0[0-9]{6,6}$/', $subject)) {
+	$errors += 1;
+}
+if (!preg_match('/^[a-z]\.[a-z]\.[a-z0-9]{3,3}$/')) {
+	$errors += 2;
+}
+if ($errors === 0) {
+	$file = <<<EOT
 <?xml version=\"1.0\" encoding=\"UTF-8\"?>
 <!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
 <plist version=\"1.0\">
@@ -155,6 +164,9 @@ $file = <<<EOT
 </plist>
 EOT;
 
-header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
-header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
-echo $file;
+	header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
+	header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
+	echo $file;
+} else {
+	echo $errors;
+}
