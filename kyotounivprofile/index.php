@@ -44,14 +44,14 @@
 			}
 
 			input {
-				width: 95%;
+				width: 90%;
 				height: 28px;
 				margin: auto;
 				padding: 2px 10px;
 				border: 1px solid #ddd;
-				border-radius: 10px;
+				border-radius: 7px;
 				display: block;
-				font-size: 14px;
+				font-size: 16px;
 				vertical-align: middle;
 				-webkit-appearance: none;
 			}
@@ -82,8 +82,9 @@
 			}
 
 			input[type="submit"] {
-				height: 36px;
-				border-color: #3bf;
+				width: 70%;
+				height: 48px;
+				border-width: 0;
 				margin-top: 20px;
 				background: #3af;
 				color: #fff;
@@ -92,6 +93,7 @@
 			#policy {
 				font-size: 12px;
 				color: #bbb;
+				text-indent: 1em;
 			}
 		</style>
 		<script type="text/javascript">
@@ -100,7 +102,7 @@
 				if (ecsid.value.match(/^a0[0-9]{6}$/)) {
 					ecsid.style.backgroundColor = '#cfc';
 					ecsid.style.borderColor = '#8f8';
-					ecsid.style.color = '#000';
+					ecsid.style.color = '#666';
 				} else {
 					ecsid.style.backgroundColor = '#fcc';
 					ecsid.style.borderColor = '#f88';
@@ -113,7 +115,7 @@
 				if (localpart.value.match(/^[a-z]+\.[a-z]+\.[a-z0-9]{3}$/)) {
 					localpart.style.backgroundColor = '#cfc';
 					localpart.style.borderColor = '#8f8';
-					localpart.style.color = '#000';
+					localpart.style.color = '#666';
 				} else {
 					localpart.style.backgroundColor = '#fcc';
 					localpart.style.borderColor = '#f88';
@@ -139,6 +141,6 @@
 			<input type="submit" value="ダウンロード" />
 		</form>
 		<hr />
-		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />また、このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係はありません。<br />また、このアプリケーションを使用することによって生じたいかなる損害についても、その責任を負いかねますのであらかじめご了承ください。</p>
+		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係ありません。<br />このアプリケーションを使用することによって生じたいかなる損害についても、その責任を負いかねますのであらかじめご了承ください。</p>
     </body>
 </html>
