@@ -51,6 +51,7 @@
 				border: 1px solid #ddd;
 				border-radius: 5px;
 				display: block;
+				font-size: 14px;
 				vertical-align: middle;
 			}
 
@@ -84,6 +85,7 @@
 				background: #3af;
 				color: #fff;
 				border-radius: 5px;
+				-webkit-appearance: none;
 			}
 
 			#policy {
@@ -136,6 +138,6 @@
 			<input type="submit" value="ダウンロード" />
 		</form>
 		<hr />
-		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
+		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />また、このアプリケーションは一個人が開発したものであり、京都大学当局とは何の関連もありません。</p>
     </body>
 </html>

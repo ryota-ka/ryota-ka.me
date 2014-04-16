@@ -5,6 +5,6 @@
 	</head>
 	<body>
 		<h1>Ryota-ka.me</h1>
-		<p><?php echo date('Y.m.d H:i:s') ?></p>
+		<p>always under construction ......</p>
 	</body>
 </html>
