@@ -31,6 +31,10 @@
 				color: #fff;
 			}
 
+			h1 + p {
+				margin: 5px 0;
+			}
+
 			hr {
 				border: 0;
 				border-bottom: 1px dashed #ccc;
@@ -93,7 +97,12 @@
 			#policy {
 				font-size: 12px;
 				color: #bbb;
+			}
+
+			#policy p {
 				text-indent: 1em;
+				margin-top: 0;
+				margin-bottom: 0;
 			}
 		</style>
 		<script type="text/javascript">
@@ -128,7 +137,7 @@
     <body>
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by Ryota Kameoka</p>
-		<p>入力された情報に基づいて、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
+		<p>入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
 		<hr />
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
@@ -141,6 +150,9 @@
 			<input type="submit" value="ダウンロード" />
 		</form>
 		<hr />
-		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係ありません。<br />このアプリケーションを使用することによって生じたいかなる損害についても、その責任を負いかねますのであらかじめご了承ください。</p>
+		<div id="policy">
+			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
+			<p>このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係ありません。</p>
+			<p>このアプリケーションを使用することによって生じたいかなる損害についても、その責任を負いかねますのであらかじめご了承ください。</p>
     </body>
 </html>
