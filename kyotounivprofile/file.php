@@ -6,10 +6,10 @@ $localpart = trim(filter_input(INPUT_POST, 'localpart'));
 
 $errors = 0;
 
-if (!preg_match('/^a0[0-9]{6,6}$/', $subject)) {
+if (!preg_match('/^a0[0-9]{6,6}$/', $ecsid)) {
 	$errors += 1;
 }
-if (!preg_match('/^[a-z]\.[a-z]\.[a-z0-9]{3,3}$/')) {
+if (!preg_match('/^[a-z]+\.[a-z]+\.[a-z0-9]{3,3}$/', $localpart)) {
 	$errors += 2;
 }
 if ($errors === 0) {
@@ -168,5 +168,5 @@ EOT;
 	header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
 	echo $file;
 } else {
-	echo $errors;
+	echo '入力内容が不正です';
 }
