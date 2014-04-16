@@ -106,8 +106,8 @@
 			#policy {
 				font-size: 12px;
 				color: #bbb;
-				padding-left: 3px;
-				padding-right: 3px;
+				padding-left: 5px;
+				padding-right: 5px;
 			}
 
 			#policy p {
