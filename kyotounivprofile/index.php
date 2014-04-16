@@ -34,7 +34,7 @@
 			hr {
 				border: 0;
 				border-bottom: 1px dashed #ccc;
-				background: #999;
+				background: transparent;
 			}
 
 			body > p {
@@ -45,13 +45,12 @@
 
 			input {
 				width: 90%;
-				height: 25px;
+				height: 28px;
 				margin: auto;
-				padding: 2px 5px;
+				padding: 2px 10px;
 				border: 1px solid #ddd;
 				border-radius: 5px;
 				display: block;
-				font-size: 16px;
 				vertical-align: middle;
 			}
 
@@ -64,7 +63,7 @@
 			}
 
 			form p {
-				font-size: 20px;
+				font-size: 18px;
 				margin-top: 5px;
 				margin-bottom: 3px;
 			}
@@ -124,7 +123,7 @@
     <body>
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by Ryota Kameoka</p>
-		<p>京都大学学生のための iPhone 構成プロファイルです。<br />Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行います。</p>
+		<p>入力された情報に基づいて、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
 		<hr />
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
