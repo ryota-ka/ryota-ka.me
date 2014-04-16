@@ -44,15 +44,16 @@
 			}
 
 			input {
-				width: 90%;
+				width: 95%;
 				height: 28px;
 				margin: auto;
 				padding: 2px 10px;
 				border: 1px solid #ddd;
-				border-radius: 5px;
+				border-radius: 10px;
 				display: block;
 				font-size: 14px;
 				vertical-align: middle;
+				-webkit-appearance: none;
 			}
 
 			#input-ecsid {
@@ -81,11 +82,11 @@
 			}
 
 			input[type="submit"] {
+				height: 36px;
+				border-color: #3bf;
 				margin-top: 20px;
 				background: #3af;
 				color: #fff;
-				border-radius: 5px;
-				-webkit-appearance: none;
 			}
 
 			#policy {
@@ -138,6 +139,6 @@
 			<input type="submit" value="ダウンロード" />
 		</form>
 		<hr />
-		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />また、このアプリケーションは一個人が開発したものであり、京都大学当局とは何の関連もありません。</p>
+		<p id="policy">入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。<br />また、このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係はありません。<br />また、このアプリケーションを使用することによって生じたいかなる損害についても、その責任を負いかねますのであらかじめご了承ください。</p>
     </body>
 </html>
