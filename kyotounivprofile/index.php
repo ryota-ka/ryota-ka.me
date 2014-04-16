@@ -7,12 +7,11 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-
-        <title>KyotoUnivProfile</title>
+		<script type="text/javascript">
+		</script>
+        <title></title>
     </head>
     <body>
-		<form>
-			<input name="ecsid" />
-		</form>
+		<a href="file.php">click me!</a>
     </body>
 </html>
