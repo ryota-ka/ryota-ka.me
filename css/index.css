@@ -25,33 +25,25 @@ nav {
 section {
 	position: relative;
 	height: 900px;
+	width: 100%;
 	border-bottom-color: rgba(0, 0, 0, 0.2);
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
-section:nth-of-type(1) {
-	background-color: #ffcb4c;
-}
-
-section:nth-of-type(2) {
-	background-color: #52dd53;
-}
-
-section:nth-of-type(3) {
-	background-color: #1f789e;
-}
-
-section:nth-of-type(4) {
-	background-color: #ff8ed4;
-}
-
-section:nth-of-type(5) {
-	background-color: #ff733b;
-}
 
 /* --- first section --- */
+#ct-logo {
+	background-color: #ffcb4c;
+
+	z-index: 1;
+}
+
+#bg-logo {
+	z-index: 95;
+}
+
 h1 {
 	font-size: 72px;
 	color: #fff;
@@ -63,12 +55,23 @@ h1 {
 
 
 /* --- second section ---*/
-#aboutme h2 {
+#ct-aboutme {
+	background-color: #52dd53;
+
+	z-index: 2;
+}
+
+#bg-aboutme {
+	z-index: 105;
+}
+
+#ct-aboutme h2 {
 	position: absolute;
 	top: 10%;
 	left: 5%;
 	font-size: 64px;
 	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 #findmeontheweb {
@@ -79,6 +82,8 @@ h1 {
 
 #findmeontheweb a {
 	display: block;
+	position: relative;
+	bottom: -120px;
 	cursor: pointer;
 	width: 96px;
 	height: 96px;
@@ -88,27 +93,43 @@ h1 {
 	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
 }
 
-#link-facebook {
-	background-image: url('/img/webicons/facebook.png');
+
+/* --- third section --- */
+
+#ct-works {
+	background-color: #1f789e;
+
+	z-index: 3;
 }
 
-#link-twitter {
-	background-image: url('/img/webicons/twitter.png');
+#bg-works {
+
+	z-index: 75;
 }
 
-#link-foursquare {
-	background-image: url('/img/webicons/foursquare.png');
+
+/* --- fourth section --- */
+
+#ct-music {
+	background-color: #ff8ed4;
+
+	z-index: 4;
 }
 
-#link-lastfm {
-	background-image: url('/img/webicons/lastfm.png');
+#bg-music {
+	z-index: 65;
 }
 
-#link-youtube {
-	background-image: url('/img/webicons/youtube.png');
+
+/* --- fifth section --- */
+
+#ct-contact {
+	background-color: #ff733b;
+
+	z-index: 5;
+
 }
 
-#link-skype {
-	background-image: url('/img/webicons/skype.png');
+#bg-contact {
+	z-index: 55;
 }
-
