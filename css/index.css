@@ -11,60 +11,45 @@ nav {
 	border-bottom-style: solid;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 	color: #fff;
-	z-index: 1;
 }
 
 
 /*--- parallax ---*/
 #container {
-	z-index: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 section {
 	position: relative;
 	height: 900px;
-	background-attachment: fixed;
 	border-bottom-color: rgba(0, 0, 0, 0.2);
-	border-bottom-width: 0px;
+	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
 section:nth-of-type(1) {
 	background-color: #ffcb4c;
-	z-index: 0;
 }
 
 section:nth-of-type(2) {
 	background-color: #52dd53;
-	z-index: 2;
 }
 
 section:nth-of-type(3) {
 	background-color: #1f789e;
-	z-index: 4;
 }
 
 section:nth-of-type(4) {
 	background-color: #ff8ed4;
-	z-index: 6;
 }
 
 section:nth-of-type(5) {
 	background-color: #ff733b;
-	z-index: 8;
 }
-
-#container > hr {
-	border: 0;
-	height: 1px;
-	margin: 0;
-	background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25));
-	background-image:    -moz-linear-gradient(left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25));
-	background-image:     -ms-linear-gradient(left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25));
-	background-image:      -o-linear-gradient(left, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.25));
-}
-
 
 /* --- first section --- */
 h1 {
@@ -73,34 +58,34 @@ h1 {
 	position: fixed;
 	bottom: 10%;
 	right: 5%;
-	z-index: auto;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 
 /* --- second section ---*/
 #aboutme h2 {
-	position: fixed;
+	position: absolute;
 	top: 10%;
 	left: 5%;
 	font-size: 64px;
 	color: #fff;
-	z-index: 1;
 }
 
 #findmeontheweb {
 	position: fixed;
-	left: 16px;
+	left: 24px;
 	bottom: 16px;
-	z-index: 1;
 }
 
-#findmeontheweb li {
+#findmeontheweb a {
+	display: block;
 	cursor: pointer;
 	width: 96px;
 	height: 96px;
 	border-radius: 48px;
 	margin-right: 16px;
 	float: left;
+	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
 }
 
 #link-facebook {
