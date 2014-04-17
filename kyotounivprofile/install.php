@@ -112,18 +112,7 @@
     <body>
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by Ryota Kameoka</p>
-		<p></p>
 		<hr />
-		<form action="file.php" method="post">
-			<p>ECS-ID</p>
-			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onchange="checkEcsId()" />
-			<p>学生用メールアドレス</p>
-			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onchange="checkLocalpart()" />
-			<p class="right">@st.kyoto-u.ac.jp</p>
-			<p>メールの表示名 (任意)</p>
-			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など" />
-			<input type="submit" value="ダウンロード" />
-		</form>
 		<hr />
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
