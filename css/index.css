@@ -11,6 +11,7 @@ nav {
 	border-bottom-style: solid;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
 	color: #fff;
+	z-index: -1;
 }
 
 
@@ -36,12 +37,7 @@ section {
 /* --- first section --- */
 #ct-logo {
 	background-color: #ffcb4c;
-
 	z-index: 1;
-}
-
-#bg-logo {
-	z-index: 95;
 }
 
 h1 {
@@ -57,21 +53,15 @@ h1 {
 /* --- second section ---*/
 #ct-aboutme {
 	background-color: #52dd53;
-
 	z-index: 2;
 }
 
-#bg-aboutme {
-	z-index: 105;
-}
-
 #ct-aboutme h2 {
-	position: absolute;
-	top: 10%;
+	position: fixed;
+	top: 110%;
 	left: 5%;
 	font-size: 64px;
 	color: #fff;
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 #findmeontheweb {
@@ -102,12 +92,6 @@ h1 {
 	z-index: 3;
 }
 
-#bg-works {
-
-	z-index: 75;
-}
-
-
 /* --- fourth section --- */
 
 #ct-music {
@@ -116,11 +100,6 @@ h1 {
 	z-index: 4;
 }
 
-#bg-music {
-	z-index: 65;
-}
-
-
 /* --- fifth section --- */
 
 #ct-contact {
@@ -128,8 +107,4 @@ h1 {
 
 	z-index: 5;
 
-}
-
-#bg-contact {
-	z-index: 55;
 }

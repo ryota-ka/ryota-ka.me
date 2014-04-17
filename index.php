@@ -60,6 +60,7 @@ EOT;
 		<title>Ryota-ka.me</title>
 	</head>
 	<body>
+		<p id="log" style="position: fixed;top:0;left:0;z-index: 10;">0 : 0</p>
 		<nav>
 			<ul>
 				<li>page top</li>
@@ -80,13 +81,11 @@ EOT;
 				</div>
 				<h2>about&nbsp;me</h2>
 				<div id="findmeontheweb">
-					<a id="link-facebook" href="http://www.facebook.com/kameoka.ryota"></a>
-					<a id="link-twitter" href=""></a>
-					<a id="link-foursquare" href=""></a>
-					<a id="link-lastfm" href=""></a>
-					<a id="link-youtube" href=""></a>
-					<a id="link-tumblr" href=""></a>
-					<a id="link-skype" href=""></a>
+					<?php
+					foreach ($sites as $site) {
+						echo '					<a id="link-' . $site[1] . '" href="' . $site[2] . '"></a>';
+					}
+					?>
 				</div>
 			</section>
 
@@ -98,7 +97,7 @@ EOT;
 
 			<section id="ct-music" class="content">
 				<article>
-					<p>Phat Phunktion, the band apart, The Baker Brothers なんかが好き。</p>
+					<p>用途未定</p>
 				</article>
 			</section>
 
