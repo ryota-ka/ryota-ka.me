@@ -1,4 +1,20 @@
 $(function() {
+	/* --- Twitter settings --- */
+	twttr.widgets.createTimeline(
+			'123456',
+			document.getElementById('timeline'),
+			function(el) {
+				console.log("Embedded a timeline.")
+			},
+			{
+				width: '450',
+				height: '700',
+				related: 'benward,endform,brianellin'
+			}
+	);
+	/* --- Twitter settings --- */
+
+
 	var sectionHeight = $(window).height() + 200;
 	$('section').css('height', sectionHeight + 'px');
 	$(window).resize(function() {

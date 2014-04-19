@@ -106,6 +106,9 @@ h1 {
 	position: absolute;
 	top: 0;
 	left: 0;
+	text-align: center;
+	line-height: 96px;
+	color: #fff;
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
 	-ms-transform: rotateY(180deg);

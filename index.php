@@ -4,6 +4,32 @@
 		<meta charset="utf-8" />
 		<style type="text/css">
 <?php
+error_reporting(E_ALL);
+/* --- Twitter settings --- */
+include_once './libs/twitteroauth/twitteroauth.php';
+
+$consumerKey = $_ENV['TWITTER_CONSUMER_KEY'];
+$consumerSecret = $_ENV['TWITTER_CONSUMER_SECRET'];
+$accessToken = $_ENV['TWITTER_ACCESS_TOKEN'];
+$accessTokenSecret = $_ENV['TWITTER_ACCESS_TOKEN_SECRET'];
+
+$twObj = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
+$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('screen_name' => 'invendu', 'count' => '10'));
+$tw_arr = json_decode($req);
+if (isset($tw_arr)) {
+	foreach ($tw_arr as $key => $val) {
+		echo $tw_arr[$key]->text;
+		echo date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at));
+		echo '<br>';
+	}
+} else {
+	echo 'つぶやきはありません。';
+}
+die;
+
+/* --- Twitter settings --- */
+
+
 include_once './css/reset.css';
 include_once './css/index.css';
 
@@ -22,6 +48,10 @@ foreach ($sites as $site) {
 	echo <<< EOT
 	#link-{$site[1]} {
 	background-image: url('/img/webicons/{$site[1]}.png');
+}
+
+#link-{$site[1]}-back {
+	background-color: #{$site[3]};
 }
 
 #link-{$site[1]}:hover::before {
@@ -56,6 +86,7 @@ EOT;
 }
 ?>
 		</style>
+		<script type="text/javascript" src="./js/widget.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
@@ -88,6 +119,7 @@ EOT;
 					}
 					?>
 				</div>
+				<div id="timeline"></div>
 			</section>
 
 			<section id="ct-works" class="content">
