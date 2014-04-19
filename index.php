@@ -84,7 +84,7 @@ EOT;
 				<div id="findmeontheweb">
 					<?php
 					foreach ($sites as $site) {
-						echo '					<div class="link-wrapper"><a id="link-' . $site[1] . '" href="' . $site[2] . '" class="front" target="_blank"></a><a id="link-' . $site[1] . '-back" class="back">ポアだ</a></div>';
+						echo '					<div class="link-wrapper"><a id="link-' . $site[1] . '" href="' . $site[2] . '" class="front" target="_blank"></a><a id="link-' . $site[1] . '-back" class="back">' . $site[0] . '</a></div>';
 					}
 					?>
 				</div>
