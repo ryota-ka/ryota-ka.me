@@ -128,10 +128,16 @@
 					ecsid.style.borderColor = '#8f8';
 					ecsid.style.color = '#666';
 					isEcsIdValid = true;
-				} else if (ecsid.value !== '') {
-					ecsid.style.backgroundColor = '#fcc';
-					ecsid.style.borderColor = '#f88';
-					ecsid.style.color = '#d00';
+				} else {
+					if (ecsid.value === '') {
+						ecsid.style.backgroundColor = '#fff';
+						ecsid.style.borderColor = '#ddd';
+						ecsid.style.color = '#666';
+					} else {
+						ecsid.style.backgroundColor = '#fcc';
+						ecsid.style.borderColor = '#f88';
+						ecsid.style.color = '#d00';
+					}
 					isEcsIdValid = false;
 				}
 
@@ -140,10 +146,16 @@
 					localpart.style.borderColor = '#8f8';
 					localpart.style.color = '#666';
 					isLocalpartValid = true;
-				} else if (localpart.value !== '') {
-					localpart.style.backgroundColor = '#fcc';
-					localpart.style.borderColor = '#f88';
-					localpart.style.color = '#d00';
+				} else {
+					if (localpart.value === '') {
+						localpart.style.backgroundColor = '#fff';
+						localpart.style.borderColor = '#ddd';
+						localpart.style.color = '#666';
+					} else {
+						localpart.style.backgroundColor = '#fcc';
+						localpart.style.borderColor = '#f88';
+						localpart.style.color = '#d00';
+					}
 					isLocalpartValid = false;
 				}
 
