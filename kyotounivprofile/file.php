@@ -162,6 +162,7 @@ if ($errors === 0) {
 	<integer>1</integer>
 </dict>
 </plist>
+
 EOT;
 
 	header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
