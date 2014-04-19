@@ -4,7 +4,8 @@
 		<meta charset="utf-8" />
 		<style type="text/css">
 <?php
-error_reporting(E_ALL);
+date_default_timezone_set('Asia/Tokyo');
+
 /* --- Twitter settings --- */
 include_once './libs/twitteroauth/twitteroauth.php';
 
@@ -14,19 +15,8 @@ $accessToken = $_ENV['TWITTER_ACCESS_TOKEN'];
 $accessTokenSecret = $_ENV['TWITTER_ACCESS_TOKEN_SECRET'];
 
 $twObj = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('screen_name' => 'invendu', 'count' => '10'));
+$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('user_id' => '974006168', 'count' => '5'));
 $tw_arr = json_decode($req);
-if (isset($tw_arr)) {
-	foreach ($tw_arr as $key => $val) {
-		echo $tw_arr[$key]->text;
-		echo date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at));
-		echo '<br>';
-	}
-} else {
-	echo 'つぶやきはありません。';
-}
-die;
-
 /* --- Twitter settings --- */
 
 
@@ -86,7 +76,6 @@ EOT;
 }
 ?>
 		</style>
-		<script type="text/javascript" src="./js/widget.js"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
@@ -103,11 +92,11 @@ EOT;
 			</ul>
 		</nav>
 		<div id="container">
-			<section id="ct-logo" class="content">
+			<section id="section-logo" class="content">
 				<h1>Ryota-ka.me</h1>
 			</section>
 
-			<section id="ct-aboutme" class="content">
+			<section id="section-aboutme" class="content">
 				<div>
 					<p class="name">Name : 亀岡 亮太 (Ryota Kameoka)</p>
 				</div>
@@ -119,22 +108,34 @@ EOT;
 					}
 					?>
 				</div>
-				<div id="timeline"></div>
+				<div id="timeline">
+					<?php
+					if (isset($tw_arr)) {
+						foreach ($tw_arr as $key => $val) {
+							echo '<div class="tweet"><p class=test">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
+						}
+					}
+					?>
+				</div>
 			</section>
 
-			<section id="ct-works" class="content">
+			<section id="section-twitter">
+				<a id="twitter-icon" href="http://twitter.com/invendu" class="front" target="_blank"></a>
+			</section>
+
+			<section id="section-works" class="content">
 				<ul>
 					<li><a href="./kyotounivprofile/">KyotoUnivProfile</a> 入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</li>
 				</ul>
 			</section>
 
-			<section id="ct-music" class="content">
+			<section id="section-music" class="content">
 				<article>
 					<p>用途未定</p>
 				</article>
 			</section>
 
-			<section id="ct-contact" class="content">
+			<section id="section-contact" class="content">
 				<article>
 					mail : noise0607@gmail.com
 				</article>

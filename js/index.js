@@ -1,30 +1,17 @@
 $(function() {
-	/* --- Twitter settings --- */
-	twttr.widgets.createTimeline(
-			'123456',
-			document.getElementById('timeline'),
-			function(el) {
-				console.log("Embedded a timeline.")
-			},
-			{
-				width: '450',
-				height: '700',
-				related: 'benward,endform,brianellin'
-			}
-	);
-	/* --- Twitter settings --- */
-
-
-	var sectionHeight = $(window).height() + 200;
+	var windowHeight = $(window).height();
+	var sectionHeight = windowHeight + 199;
 	$('section').css('height', sectionHeight + 'px');
 	$(window).resize(function() {
-		sectionHeight = $(window).height() + 200;
+		windowHeight = $(window).height();
+		sectionHeight = windowHeight + 199;
 		$('section').css('height', sectionHeight + 'px');
 	});
 
 	var nav = $('nav');
 	var aboutme = $('#ct-aboutme h2');
 	var links = $('#findmeontheweb > .link-wrapper');
+	var tweets = $('tweets');
 
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
@@ -65,7 +52,27 @@ $(function() {
 				} else {
 					return 0;
 				}
-			})(scroll, i) + 'px');
+			})(scroll, i) + 'px');//.css('transform', 'perspective(1000px) rotateY(' + scroll + 'deg)');
 		}
+		/* --- find me on the web --- */
+
+		/* --- tweets --- */
+		if (scroll > sectionHeight + 200) {
+			$(links[1]).hide();
+			var percent = (scroll - windowHeight - 400) / windowHeight;
+			if (percent > 1) {
+				percent = 1;
+			}
+			//$('#twitter-icon').css({width: (96 * (1 + percent)) + 'px', height: (96 * (1 + percent)) + 'px', borderRadius: (48 * (1 + percent)) + 'px'});
+			//$('#twitter-icon').css('transform', 'perspective(1000px) rotateY(' + Math.floor(percent * 720) + 'deg)').css('-webkit-transform', 'perspective(1000px) rotateY(' + Math.floor(percent * 720) + 'deg)');
+		} else {
+			$(links[1]).show();
+		}
+
+		var len = tweets.length;
+		for (var i = 0; i < len; i++) {
+
+		}
+		/* --- tweets --- */
 	});
 });

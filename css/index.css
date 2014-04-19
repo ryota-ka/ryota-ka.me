@@ -34,10 +34,9 @@ section {
 }
 
 
-/* --- first section --- */
-#ct-logo {
+/* --- logo section --- */
+#section-logo {
 	background-color: #ffcb4c;
-	z-index: 1;
 }
 
 h1 {
@@ -50,13 +49,12 @@ h1 {
 }
 
 
-/* --- second section ---*/
-#ct-aboutme {
+/* --- aboutme section ---*/
+#section-aboutme {
 	background-color: #52dd53;
-	z-index: 2;
 }
 
-#ct-aboutme h2 {
+#section-aboutme h2 {
 	position: fixed;
 	top: 110%;
 	left: 5%;
@@ -126,23 +124,70 @@ h1 {
 }
 
 
-/* --- third section --- */
+/* --- tweets section --- */
+#section-twitter {
+	background-color: #ffcb4c;
+}
 
-#ct-works {
+#twitter-icon {
+	display: block;
+	width: 96px;
+	height: 96px;
+	border-radius: 48px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
+	background-image: url('/img/webicons/twitter_large.png');
+	background-position: 50% 50%;
+	background-size: 100%;
+}
+
+.tweet {
+	position: absolute;
+	width: 300px;
+	background-color: #fff;
+	color: #666;
+	padding: 10px;
+	border-radius: 20px;
+	line-height: 25px;
+}
+
+.tweet::before {
+	content: '';
+	width: 0;
+	height: 0;
+	position: absolute;
+	bottom: -24px;
+	left: 50px;
+	border-top: solid 24px #fff;
+	border-left: solid 16px transparent;
+	border-right: solid 16px transparent;
+}
+
+.tweet .datetime {
+	text-align: right;
+	font-size: 14px;
+	font-style: italic;
+	color: #bbb;
+	margin-top: 5px;
+}
+
+
+/* --- works section --- */
+
+#section-works {
 	background-color: #1f789e;
-	z-index: 3;
 }
 
-/* --- fourth section --- */
+/* --- some section --- */
 
-#ct-music {
+#section-music {
 	background-color: #ff8ed4;
-	z-index: 4;
 }
 
-/* --- fifth section --- */
+/* --- foobar section --- */
 
-#ct-contact {
+#section-contact {
 	background-color: #ff733b;
-	z-index: 5;
 }
