@@ -1,7 +1,7 @@
 <?php
 
 $ecsid = trim(filter_input(INPUT_POST, 'ecsid'));
-$name = trim(filter_input(INPUT_POST, 'name')) || '';
+$name = trim(filter_input(INPUT_POST, 'name'));
 $localpart = trim(filter_input(INPUT_POST, 'localpart'));
 
 $errors = 0;
@@ -13,10 +13,10 @@ if (!preg_match('/^[a-z]+\.[a-z]+\.[a-z0-9]{3,3}$/', $localpart)) {
 	$errors += 2;
 }
 if ($errors === 0) {
-	$file = <<<EOT
-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">
-<plist version=\"1.0\">
+	$file = <<<'EOT'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
 <dict>
 	<key>PayloadContent</key>
 	<array>
@@ -47,12 +47,25 @@ if ($errors === 0) {
 		<dict>
 			<key>EmailAccountDescription</key>
 			<string>KUMOI</string>
+
+EOT;
+	if (!empty($name)) {
+		$file .= <<< 'EOT'
 			<key>EmailAccountName</key>
-			<string>$name</string>
+			<string>
+EOT;
+		$file .= $name;
+		$file .= <<< 'EOT'
+</string>
 			<key>EmailAccountType</key>
 			<string>EmailTypeIMAP</string>
 			<key>EmailAddress</key>
-			<string>$localpart@st.kyoto-u.ac.jp</string>
+			<string>
+EOT;
+	}
+	$file .= $localpart;
+	$file .= <<< 'EOT'
+@st.kyoto-u.ac.jp</string>
 			<key>IncomingMailServerAuthentication</key>
 			<string>EmailAuthPassword</string>
 			<key>IncomingMailServerHostName</key>
@@ -62,7 +75,11 @@ if ($errors === 0) {
 			<key>IncomingMailServerUseSSL</key>
 			<true/>
 			<key>IncomingMailServerUsername</key>
-			<string>$ecsid@st.kyoto-u.ac.jp</string>
+			<string>
+EOT;
+	$file .= $ecsid;
+	$file .= <<< 'EOT'
+@st.kyoto-u.ac.jp</string>
 			<key>OutgoingMailServerAuthentication</key>
 			<string>EmailAuthPassword</string>
 			<key>OutgoingMailServerHostName</key>
@@ -72,7 +89,11 @@ if ($errors === 0) {
 			<key>OutgoingMailServerUseSSL</key>
 			<true/>
 			<key>OutgoingMailServerUsername</key>
-			<string>$ecsid@st.kyoto-u.ac.jp</string>
+			<string>
+EOT;
+	$file .= $ecsid;
+	$file .= <<< 'EOT'
+@st.kyoto-u.ac.jp</string>
 			<key>OutgoingPasswordSameAsIncomingPassword</key>
 			<true/>
 			<key>PayloadDescription</key>
@@ -107,7 +128,11 @@ if ($errors === 0) {
 			<key>PPP</key>
 			<dict>
 				<key>AuthName</key>
-				<string>$ecsid</string>
+				<string>
+EOT;
+	$file .= $ecsid;
+	$file .= <<< 'EOT'
+</string>
 				<key>CCPEnabled</key>
 				<integer>1</integer>
 				<key>CCPMPPE128Enabled</key>
