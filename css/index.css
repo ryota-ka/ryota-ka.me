@@ -70,16 +70,55 @@ h1 {
 	bottom: 16px;
 }
 
-#findmeontheweb a {
-	display: block;
+#findmeontheweb .link-wrapper {
 	position: relative;
 	bottom: -120px;
+	margin-right: 16px;
+	float: left;
+}
+
+#findmeontheweb .link-wrapper {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: -webkit-transform 1s ease;
+	-moz-transform: -moz-transform 1s ease;
+	-ms-transform: -ms-transform 1s ease;
+	transition: transform 1s ease;
+}
+
+#findmeontheweb .link-wrapper:hover {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+#findmeontheweb .link-wrapper a {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+#findmeontheweb .link-wrapper .back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+#findmeontheweb a {
+	display: block;
 	cursor: pointer;
 	width: 96px;
 	height: 96px;
 	border-radius: 48px;
-	margin-right: 16px;
-	float: left;
+	margin-top: 16px;
 	box-shadow: 0 20px 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -88,7 +127,6 @@ h1 {
 
 #ct-works {
 	background-color: #1f789e;
-
 	z-index: 3;
 }
 
@@ -96,7 +134,6 @@ h1 {
 
 #ct-music {
 	background-color: #ff8ed4;
-
 	z-index: 4;
 }
 
@@ -104,7 +141,5 @@ h1 {
 
 #ct-contact {
 	background-color: #ff733b;
-
 	z-index: 5;
-
 }

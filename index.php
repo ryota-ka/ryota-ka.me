@@ -15,6 +15,7 @@ $sites = array(
 	array('Last.fm', 'lastfm', 'http://www.last.fm/user/ryotakameoka', 'ed0000'),
 	array('YouTube', 'youtube', 'http://www.youtube.com/channel/UC7pkiEXXwH1PiR-2xnHNLmQ', 'fb0d1f'),
 	array('Tumblr', 'tumblr', 'http://syrupandbutter.tumblr.com/', '284d6e'),
+	array('Amazon', 'amazon', 'http://www.amazon.co.jp/registry/wishlist/NCRDLUWP5AR5', 'ff9300'),
 	array('Skype', 'skype', 'skype:noise0607?userinfo', '00b0f5'),
 );
 foreach ($sites as $site) {
@@ -44,18 +45,18 @@ foreach ($sites as $site) {
 	position: absolute;
 	display: block;
 	top: -22px;
-	left: 36px;
+	left: 40px;
 	width: 0;
 	height: 0;
-	border-top: 16px #{$site[3]} solid;
-	border-left: 12px solid transparent;
-	border-right: 12px solid transparent;
+	border-top: 12px #{$site[3]} solid;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
 }
 EOT;
 }
 ?>
 		</style>
-		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
 	</head>
@@ -83,7 +84,7 @@ EOT;
 				<div id="findmeontheweb">
 					<?php
 					foreach ($sites as $site) {
-						echo '					<a id="link-' . $site[1] . '" href="' . $site[2] . '"></a>';
+						echo '					<div class="link-wrapper"><a id="link-' . $site[1] . '" href="' . $site[2] . '" class="front" target="_blank"></a><a id="link-' . $site[1] . '-back" class="back">ポアだ</a></div>';
 					}
 					?>
 				</div>

@@ -8,7 +8,7 @@ $(function() {
 
 	var nav = $('nav');
 	var aboutme = $('#ct-aboutme h2');
-	var links = $('#findmeontheweb a');
+	var links = $('#findmeontheweb > .link-wrapper');
 
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
