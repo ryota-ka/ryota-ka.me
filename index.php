@@ -134,7 +134,7 @@ EOT;
 							. 'transform:scale(' . (1 - 0.03 * $i) . '); '
 							. 'box-shadow: 0 ' . (25 - 2 * $i) . 'px ' . (30 - $i) . 'px ' . (15 - $i) . 'px rgba(0, 0, 0, ' . (0.08 + 0.005 * $i) . ');">'
 							. '<p class="text">' . $tw_arr[$key]->text . '</p>'
-							. '<p class="datetime"><a href="http://twitter.com/' . $tw_arr[$key]->screen_name . '/status/' . $tw_arr[$key]->id . '">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</a></p></div>';
+							. '<p class="datetime"><a href="http://twitter.com/' . $tw_arr[$key]->user->screen_name . '/status/' . $tw_arr[$key]->id . '">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</a></p></div>';
 							$i++;
 						}
 					} else {

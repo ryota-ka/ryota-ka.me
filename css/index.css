@@ -183,10 +183,17 @@ h1 {
 	text-align: right;
 	font-size: 14px;
 	font-style: italic;
-	color: #bbb;
 	margin-top: 5px;
 }
 
+.tweet .datetime a {
+	color: #bbb;
+	text-decoration: none;
+}
+
+.tweet .datetime a:hover {
+	text-decoration: underline;
+}
 
 /* --- works section --- */
 
