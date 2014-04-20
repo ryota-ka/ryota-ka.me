@@ -15,7 +15,7 @@ $accessToken = $_ENV['TWITTER_ACCESS_TOKEN'];
 $accessTokenSecret = $_ENV['TWITTER_ACCESS_TOKEN_SECRET'];
 
 $twObj = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('user_id' => '974006168', 'count' => '5'));
+$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('user_id' => '974006168', 'count' => '10'));
 $tw_arr = json_decode($req);
 /* --- Twitter settings --- */
 
@@ -118,19 +118,19 @@ EOT;
 			</section>
 
 			<section id="section-twitter">
-				<p id="followmeontwitter">Follow me on Twitter!</p>
+				<p id="followmeontwitter"><a href="http://twitter.com/invendu">Follow me on Twitter !!</a></p>
 				<div id="timeline">
 					<?php
 					$pos = array(20, 90, 5, 95, 10, 60, 90, 30, 50, 85);
 					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						$i = 0;
 						foreach ($tw_arr as $key => $val) {
-							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . '); -moz-transform:scale(' . (1 - 0.03 * $i) . '); -o-transform:scale(' . (1 - 0.03 * $i) . '); -ms-transform:scale(' . (1 - 0.03 * $i) . '); transform:scale(' . (1 - 0.03 * $i) . '); "><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
+							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . '); -moz-transform:scale(' . (1 - 0.03 * $i) . '); -o-transform:scale(' . (1 - 0.03 * $i) . '); -ms-transform:scale(' . (1 - 0.03 * $i) . '); transform:scale(' . (1 - 0.03 * $i) . '); "><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime"><a href="http://twitter.com/' . $tw_arr[$key]->screen_name . '/status/' . $tw_arr[$key]->id . '">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</a></p></div>';
 							$i++;
 						}
 					} else {
 						for ($i = 0; $i < 10; $i++) {
-							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . ')"><p class="text">Tweet #' . ($i + 1) . ' : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="datetime">1970-01-01 00:00:00</p></div>';
+							echo '<div class="tweet" style="z-index: ' . (10 - $i) . ';' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . ')"><p class="text">Tweet #' . ($i + 1) . ' : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="datetime">1970-01-01 00:00:00</p></div>';
 						}
 					}
 					?>
