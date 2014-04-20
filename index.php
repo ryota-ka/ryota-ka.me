@@ -36,7 +36,7 @@ $sites = array(
 );
 foreach ($sites as $site) {
 	echo <<< EOT
-	#link-{$site[1]} {
+#link-{$site[1]} {
 	background-image: url('/img/webicons/{$site[1]}.png');
 }
 
@@ -77,6 +77,7 @@ EOT;
 ?>
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.transit.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
 	</head>
@@ -97,9 +98,14 @@ EOT;
 			</section>
 
 			<section id="section-aboutme" class="content">
-				<div>
-					<p class="name">Name : 亀岡 亮太 (Ryota Kameoka)</p>
-				</div>
+				<table id="profile">
+					<tbody>
+						<tr><td>○</td><td>Birthday</td><td>1993.06.07 (Age 20)</td></tr>
+						<tr><td>○</td><td>Location</td><td>Sakyo, Kyoto</td></tr>
+						<tr><td>○</td><td>Hometown</td><td>Kishiwada, Osaka</td></tr>
+						<tr><td>○</td><td>Education</td><td>Kyoto University (Faculty of Economics)</td></tr>
+					</tbody>
+				</table>
 				<h2>about&nbsp;me</h2>
 				<div id="findmeontheweb">
 					<?php
@@ -108,25 +114,45 @@ EOT;
 					}
 					?>
 				</div>
+
+			</section>
+
+			<section id="section-twitter">
+				<p id="followmeontwitter">Follow me on Twitter!</p>
 				<div id="timeline">
 					<?php
-					if (isset($tw_arr)) {
+					$pos = array(20, 90, 5, 95, 10, 60, 90, 30, 50, 85);
+					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						foreach ($tw_arr as $key => $val) {
-							echo '<div class="tweet"><p class=test">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
+							echo '<div class="tweet"><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
+						}
+					} else {
+						for ($i = 0; $i < 10; $i++) {
+							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . ')"><p class="text">Tweet #' . ($i + 1) . ' : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="datetime">1970-01-01 00:00:00</p></div>';
 						}
 					}
 					?>
 				</div>
 			</section>
 
-			<section id="section-twitter">
-				<a id="twitter-icon" href="http://twitter.com/invendu" class="front" target="_blank"></a>
-			</section>
-
 			<section id="section-works" class="content">
-				<ul>
-					<li><a href="./kyotounivprofile/">KyotoUnivProfile</a> 入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</li>
-				</ul>
+				<div id="products-row">
+					<div class="product-wrapper">
+						<div class="product">
+							<p class="image"></p>
+							<p class="name"><a href="./kyotounivprofile/">KyotoUnivProfile</a></p>
+							<p class="description">入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
+						</div>
+					</div>
+					<div class="product-wrapper"><div class="product">
+							<p class="image"></p>
+							<p class="name"><a href="./20x20/">20x20</a></p>
+							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>
+						</div>
+					</div>
+					<div class="product-wrapper dummy"><div class="product"></div></div>
+					<div class="product-wrapper dummy"><div class="product"></div></div>
+				</div>
 			</section>
 
 			<section id="section-music" class="content">

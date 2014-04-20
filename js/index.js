@@ -11,8 +11,23 @@ $(function() {
 	var nav = $('nav');
 	var aboutme = $('#ct-aboutme h2');
 	var links = $('#findmeontheweb > .link-wrapper');
-	var tweets = $('tweets');
+	var tweets = $('.tweet');
+	var tweetsPosY = [150, 120, 70, 100, 70, 30, -50, -50, -100, -70];
 
+	$('.product').click(function() {
+		$(this).text($(this).children('a').attr('href'));
+	});
+	/*
+	 var len = links.length;
+	 for (var i = 0; i < len; i++) {
+	 $(links[i]).click(function() {
+	 $(this).clearQueue().transition({rotateY: '180deg', top: '-400px', left: '-200px'}, 700);
+	 return false;
+	 });//.mouseleave(function() {
+	 //	$(this).clearQueue().transition({rotateY: '0deg', y: '0px'}, 700);
+	 //});
+	 }
+	 */
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
 		$('#log').text($(window).height() + ' : ' + scroll);
@@ -58,20 +73,14 @@ $(function() {
 
 		/* --- tweets --- */
 		if (scroll > sectionHeight + 200) {
-			$(links[1]).hide();
 			var percent = (scroll - windowHeight - 400) / windowHeight;
-			if (percent > 1) {
-				percent = 1;
+			if (percent > 2.2) {
+				percent = 2.2;
 			}
-			//$('#twitter-icon').css({width: (96 * (1 + percent)) + 'px', height: (96 * (1 + percent)) + 'px', borderRadius: (48 * (1 + percent)) + 'px'});
-			//$('#twitter-icon').css('transform', 'perspective(1000px) rotateY(' + Math.floor(percent * 720) + 'deg)').css('-webkit-transform', 'perspective(1000px) rotateY(' + Math.floor(percent * 720) + 'deg)');
-		} else {
-			$(links[1]).show();
-		}
-
-		var len = tweets.length;
-		for (var i = 0; i < len; i++) {
-
+			var len = tweets.length;
+			for (var i = 0; i < len; i++) {
+				$(tweets[i]).css('bottom', tweetsPosY[i] + 100 * (percent * (1 + 0.25 * (i - 5)) - 0.8) + '%');
+			}
 		}
 		/* --- tweets --- */
 	});
