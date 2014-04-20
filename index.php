@@ -124,7 +124,7 @@ EOT;
 					$pos = array(20, 90, 5, 95, 10, 60, 90, 30, 50, 85);
 					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						foreach ($tw_arr as $key => $val) {
-							echo '<div class="tweet"><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
+							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . '); -moz-transform:scale(' . (1 - 0.03 * $i) . '); -o-transform:scale(' . (1 - 0.03 * $i) . '); -ms-transform:scale(' . (1 - 0.03 * $i) . '); transform:scale(' . (1 - 0.03 * $i) . '); "><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</p></div>';
 						}
 					} else {
 						for ($i = 0; $i < 10; $i++) {
