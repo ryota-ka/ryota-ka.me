@@ -30,7 +30,7 @@ $sites = array(
 	array('Foursquare', 'foursquare', 'http://ja.foursquare.com/user/4420704', '00b0f1'),
 	array('Last.fm', 'lastfm', 'http://www.last.fm/user/ryotakameoka', 'ed0000'),
 	array('YouTube', 'youtube', 'http://www.youtube.com/channel/UC7pkiEXXwH1PiR-2xnHNLmQ', 'fb0d1f'),
-	array('Tumblr', 'tumblr', 'http://syrupandbutter.tumblr.com/', '284d6e'),
+//	array('Tumblr', 'tumblr', 'http://syrupandbutter.tumblr.com/', '284d6e'),
 	array('Amazon', 'amazon', 'http://www.amazon.co.jp/registry/wishlist/NCRDLUWP5AR5', 'ff9300'),
 	array('Skype', 'skype', 'skype:noise0607?userinfo', '00b0f5'),
 );
@@ -100,10 +100,10 @@ EOT;
 			<section id="section-aboutme" class="content">
 				<table id="profile">
 					<tbody>
-						<tr><td>○</td><td>Birthday</td><td>1993.06.07 (Age 20)</td></tr>
-						<tr><td>○</td><td>Location</td><td>Sakyo, Kyoto</td></tr>
-						<tr><td>○</td><td>Hometown</td><td>Kishiwada, Osaka</td></tr>
-						<tr><td>○</td><td>Education</td><td>Kyoto University (Faculty of Economics)</td></tr>
+						<tr><td>○</td><td>Birthday</td><td>1993.06.07 (Age&nbsp;20)</td></tr>
+						<tr><td>○</td><td>Location</td><td>Sakyo,&nbsp;Kyoto</td></tr>
+						<tr><td>○</td><td>Hometown</td><td>Kishiwada,&nbsp;Osaka</td></tr>
+						<tr><td>○</td><td>Education</td><td>Kyoto&nbsp;University (Faculty&nbsp;of&nbsp;Economics)</td></tr>
 					</tbody>
 				</table>
 				<h2>about&nbsp;me</h2>
@@ -118,10 +118,10 @@ EOT;
 			</section>
 
 			<section id="section-twitter">
-				<p id="followmeontwitter"><a href="http://twitter.com/invendu">Follow me on Twitter !!</a></p>
+				<p id="followmeontwitter"><a href="http://twitter.com/invendu" target="blank">Follow&nbsp;me on&nbsp;Twitter</a></p>
 				<div id="timeline">
 					<?php
-					$pos = array(20, 90, 5, 95, 10, 60, 90, 30, 50, 85);
+					$pos = array(20, 90, 5, 95, 1, 60, 70, 100, 10, 80);
 					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						$i = 0;
 						foreach ($tw_arr as $key => $val) {

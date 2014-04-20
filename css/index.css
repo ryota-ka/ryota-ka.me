@@ -131,7 +131,10 @@ h1 {
 
 /* --- tweets section --- */
 #section-twitter {
-	background-color: #49c8e8;
+	background-image: url('/img/background/twitter_large.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #55acee;
 }
 
 #followmeontwitter {
@@ -147,10 +150,6 @@ h1 {
 #followmeontwitter a {
 	color: #fff;
 	text-decoration: none;
-}
-
-#followmeontwitter a:hover {
-	text-decoration: underline;
 }
 
 .tweet {
