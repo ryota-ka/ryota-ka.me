@@ -125,12 +125,26 @@ EOT;
 					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						$i = 0;
 						foreach ($tw_arr as $key => $val) {
-							echo '<div class="tweet" style="' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . '); -moz-transform:scale(' . (1 - 0.03 * $i) . '); -o-transform:scale(' . (1 - 0.03 * $i) . '); -ms-transform:scale(' . (1 - 0.03 * $i) . '); transform:scale(' . (1 - 0.03 * $i) . '); "><p class="text">' . $tw_arr[$key]->text . '</p><p class="datetime"><a href="http://twitter.com/' . $tw_arr[$key]->screen_name . '/status/' . $tw_arr[$key]->id . '">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</a></p></div>';
+							echo '<div class="tweet" style="z-index: ' . (10 - $i) . '; '
+							. ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%;'
+							. ' -webkit-transform:scale(' . (1 - 0.03 * $i) . '); '
+							. '-moz-transform:scale(' . (1 - 0.03 * $i) . '); '
+							. '-o-transform:scale(' . (1 - 0.03 * $i) . '); '
+							. '-ms-transform:scale(' . (1 - 0.03 * $i) . '); '
+							. 'transform:scale(' . (1 - 0.03 * $i) . '); '
+							. 'box-shadow: 0 ' . (25 - 2 * $i) . 'px ' . (30 - $i) . 'px ' . (15 - $i) . 'px rgba(0, 0, 0, ' . (0.08 + 0.005 * $i) . ');">'
+							. '<p class="text">' . $tw_arr[$key]->text . '</p>'
+							. '<p class="datetime"><a href="http://twitter.com/' . $tw_arr[$key]->screen_name . '/status/' . $tw_arr[$key]->id . '">' . date('Y-m-d H:i:s', strtotime($tw_arr[$key]->created_at)) . '</a></p></div>';
 							$i++;
 						}
 					} else {
 						for ($i = 0; $i < 10; $i++) {
-							echo '<div class="tweet" style="z-index: ' . (10 - $i) . ';' . ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%; -webkit-transform:scale(' . (1 - 0.03 * $i) . ')"><p class="text">Tweet #' . ($i + 1) . ' : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p class="datetime">1970-01-01 00:00:00</p></div>';
+							echo '<div class="tweet" style="z-index: ' . (10 - $i) . '; '
+							. ($pos[$i] > 50 ? 'right' : 'left') . ': ' . ($pos[$i] > 50 ? 100 - $pos[$i] : $pos[$i]) . '%;'
+							. ' -webkit-transform:scale(' . (1 - 0.03 * $i) . '); '
+							. 'box-shadow: 0 ' . (25 - 2 * $i) . 'px ' . (30 - $i) . 'px ' . (15 - $i) . 'px rgba(0, 0, 0, ' . (0.08 + 0.005 * $i) . ');">'
+							. '<p class="text">Tweet #' . ($i + 1) . ' : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>'
+							. '<p class="datetime">1970-01-01 00:00:00</p></div>';
 						}
 					}
 					?>
