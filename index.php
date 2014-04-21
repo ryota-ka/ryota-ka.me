@@ -23,6 +23,50 @@ $tw_arr = json_decode($req);
 include_once './css/reset.css';
 include_once './css/index.css';
 
+/* --- navigation and sections --- */
+
+$sections = array(
+	array('top', 'logo', 'ffcb4c'),
+	array('about me', 'aboutme', '45cdab'),
+	array('twitter', 'twitter', '55acee'),
+	array('works', 'works', '1f789e'),
+	array('music', 'music', 'ff8ed4'),
+	array('contact', 'contact', 'ff733b')
+);
+
+$i = 1;
+foreach ($sections as $section) {
+	echo <<< EOT
+#section-{$section[1]} {
+	background-color: #{$section[2]};
+}
+
+nav ul li:nth-child($i) {
+	background-image: url('/img/icons/{$section[1]}.png');
+	background-color: #{$section[2]};
+}
+EOT;
+	/*
+	  nav ul li:nth-child($i):hover::before {
+	  content: '{$section[0]}';
+	  display: block;
+	  position: relative;
+	  top: 39px;
+	  left: 75px;
+	  width: 120px;
+	  height: 36px;
+	  color: #fff;
+	  font-size: 18px;
+	  line-height: 36px;
+	  text-align: center;
+	  background-color: #{$section[2]};
+	  }
+
+	  EOT; */
+	$i++;
+}
+/* --- navigation and sections --- */
+
 /* --- find me on the web --- */
 $sites = array(
 	array('Facebook', 'facebook', 'http://www.facebook.com/kameoka.ryota', '3d569e'),
@@ -41,38 +85,57 @@ foreach ($sites as $site) {
 }
 
 #link-{$site[1]}-back {
+		background-image: url('/img/webicons/{$site[1]}.png');
+
 	background-color: #{$site[3]};
 }
 
 #link-{$site[1]}:hover::before {
 	content: '{$site[0]}';
 	display: block;
-	position: absolute;
-	top: -58px;
-	left: -12px;
-	width: 120px;
-	height: 36px;
 	color: #fff;
-	font-size: 18px;
-	line-height: 36px;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 96px;
+	height: 96px;
+	border-radius: 48px;
+	background-color: rgba(0,0,0,0.2);
 	text-align: center;
-	background-color: #{$site[3]};
-	border-radius: 5px;
-}
-
-#link-{$site[1]}:hover::after {
-	content: '';
-	position: absolute;
-	display: block;
-	top: -22px;
-	left: 40px;
-	width: 0;
-	height: 0;
-	border-top: 12px #{$site[3]} solid;
-	border-left: 8px solid transparent;
-	border-right: 8px solid transparent;
+	line-hegiht: 96px;
+	font-size: 1.2em;
+	text-decoration: none;
 }
 EOT;
+	/*
+	  #link-{$site[1]}:hover::before {
+	  content: '{$site[0]}';
+	  display: block;
+	  position: absolute;
+	  top: -58px;
+	  left: -12px;
+	  width: 120px;
+	  height: 36px;
+	  color: #fff;
+	  font-size: 18px;
+	  line-height: 36px;
+	  text-align: center;
+	  background-color: #{$site[3]};
+	  border-radius: 5px;
+	  }
+
+	  #link-{$site[1]}:hover::after {
+	  content: '';
+	  position: absolute;
+	  display: block;
+	  top: -22px;
+	  left: 40px;
+	  width: 0;
+	  height: 0;
+	  border-top: 12px #{$site[3]} solid;
+	  border-left: 8px solid transparent;
+	  border-right: 8px solid transparent;
+	  } */
 }
 ?>
 		</style>
@@ -85,11 +148,12 @@ EOT;
 		<p id="log" style="position: fixed;top:0;left:0;z-index: 10;">0 : 0</p>
 		<nav>
 			<ul>
-				<li>page top</li>
-				<li>about me</li>
-				<li>works</li>
-				<li>music</li>
-				<li>contact</li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
 			</ul>
 		</nav>
 		<div id="container">
@@ -107,6 +171,7 @@ EOT;
 					</tbody>
 				</table>
 				<h2>about&nbsp;me</h2>
+				<p id="profile_picture"><img src="./img/profile_picture.jpg" width="240" height="240" alt="プロフィール写真" /></p>
 				<div id="findmeontheweb">
 					<?php
 					foreach ($sites as $site) {
@@ -121,7 +186,7 @@ EOT;
 				<p id="followmeontwitter"><a href="http://twitter.com/invendu" target="blank">Follow&nbsp;me on&nbsp;Twitter</a></p>
 				<div id="timeline">
 					<?php
-					$pos = array(20, 90, 5, 95, 1, 60, 70, 100, 10, 80);
+					$pos = array(20, 90, 5, 95, 7, 60, 70, 100, 10, 80);
 					if (isset($tw_arr) && !isset($tw_arr->errors)) {
 						$i = 0;
 						foreach ($tw_arr as $key => $val) {

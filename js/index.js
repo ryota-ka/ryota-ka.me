@@ -9,10 +9,25 @@ $(function() {
 	});
 
 	var nav = $('nav');
-	var aboutme = $('#ct-aboutme h2');
+	var navButtons = $('nav li');
+	var aboutme = $('#section-aboutme h2');
+	var profilePicture = $('#profile_picture');
 	var links = $('#findmeontheweb > .link-wrapper');
 	var tweets = $('.tweet');
-	var tweetsPosY = [150, 120, 70, 100, 70, 30, -50, -50, -100, -70];
+	var tweetsPosY = [150, 120, 70, 100, 70, -30, -30, -50, -100, -70];
+
+	$(nav).mouseover(function() {
+		$(nav).animate({left: '0px'}, 300);
+	}).mouseleave(function() {
+		$(nav).animate({left: '-58px'}, 300);
+	});
+
+	var len = navButtons.length;
+	for (var i = 0; i < len; i++) {
+		$(navButtons[i]).click({index: i}, function(event) {
+			$('html, body').animate({scrollTop: event.data.index * sectionHeight}, 500);
+		});
+	}
 
 	$('.product').click(function() {
 		$(this).text($(this).children('a').attr('href'));
@@ -32,19 +47,28 @@ $(function() {
 		var scroll = $(this).scrollTop();
 		$('#log').text($(window).height() + ' : ' + scroll);
 
-		/* --- navigation --- */
-		$('nav').css('top', (scroll * 0.8 - 71 > 0 ? 0 : scroll * 0.8 - 71) + 'px');
+		//nav.css('padding-top', 100 - (100 * scroll / ($(document).height() - windowHeight)) + 'px');
 
 		/* --- aboutme --- */
-		aboutme.css('top', (function(scroll) {
-			if (scroll < 200 + sectionHeight * 0.2) {
-				return 110;
-			} else if (scroll < sectionHeight * 0.8) {
-				//return 160 - ((100 * scroll / (0.6 * sectionHeight - 200)) + (100 * (0.6 * sectionHeight - 200) / (0.6 * sectionHeight + 200)));
+		aboutme.css('right', (function(scroll) {
+			if (scroll < sectionHeight - 50) {
+				return -50;
+			} else if (scroll < sectionHeight) {
+				return (scroll - sectionHeight - 50) / 50;
 			} else {
-				return 10;
+				return 50;
 			}
-		})(scroll) + '%');
+		})(scroll) + 'px');
+
+		$(profilePicture).css('opacity', (function(scroll) {
+			if (scroll < 200) {
+				return 0;
+			} else if (scroll < sectionHeight) {
+				return (scroll - 200) / windowHeight;
+			} else {
+				return 1;
+			}
+		})(scroll));
 
 		/* --- find me on the web --- */
 		var len = links.length;
