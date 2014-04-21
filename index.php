@@ -42,7 +42,7 @@ foreach ($sections as $section) {
 }
 
 nav ul li:nth-child($i) {
-	background-image: url('/img/icons/{$section[1]}.png');
+	background-image: url('/img/icons/nav/{$section[1]}.png');
 	background-color: #{$section[2]};
 }
 EOT;
@@ -81,11 +81,11 @@ $sites = array(
 foreach ($sites as $site) {
 	echo <<< EOT
 #link-{$site[1]} {
-	background-image: url('/img/webicons/{$site[1]}.png');
+	background-image: url('/img/icons/findmeontheweb/{$site[1]}.png');
 }
 
 #link-{$site[1]}-back {
-		background-image: url('/img/webicons/{$site[1]}.png');
+		background-image: url('/img/icons/findmeontheweb/{$site[1]}.png');
 
 	background-color: #{$site[3]};
 }
@@ -220,13 +220,13 @@ EOT;
 				<div id="products-row">
 					<div class="product-wrapper">
 						<div class="product">
-							<p class="image"></p>
+							<p class="image" style="background-image: url('/img/icons/works/kyotounivprofile.png');"></p>
 							<p class="name"><a href="./kyotounivprofile/">KyotoUnivProfile</a></p>
 							<p class="description">入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
 						</div>
 					</div>
 					<div class="product-wrapper"><div class="product">
-							<p class="image"></p>
+							<p class="image" style="background-image: url('/img/icons/works/20x20.png');"></p>
 							<p class="name"><a href="./20x20/">20x20</a></p>
 							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>
 						</div>

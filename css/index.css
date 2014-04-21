@@ -34,10 +34,7 @@ section {
 	position: relative;
 	height: 900px;
 	width: 100%;
-	border-bottom-color: rgba(0, 0, 0, 0.2);
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
+	padding-left: 80px;
 }
 
 
@@ -65,8 +62,9 @@ h1 {
 	position: fixed;
 	top: 50px;
 	right: -10%;
-	font-size: 96px;
+	font-size: 3em;
 	color: #fff;
+	font-weight: normal;
 }
 
 #profile_picture {
@@ -75,7 +73,7 @@ h1 {
 	border: solid 1px #ccc;
 	position: absolute;
 	top: 50px;
-	left: 50px;
+	right: 50px;
 }
 
 #profile_picture img {
@@ -87,7 +85,7 @@ h1 {
 	font-size: 1.3em;
 	position: absolute;
 	top: 50px;
-	left: 320px;
+	left: 420px;
 }
 
 #profile tr td:nth-child(1) {
@@ -281,7 +279,6 @@ h1 {
 	left: 7px;
 	width: 224px;
 	height: 224px;
-	background-image: url('/img/other/comingsoon.png');
 	border: solid 1px #bbb;
 }
 
