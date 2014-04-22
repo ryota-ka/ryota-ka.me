@@ -31,7 +31,8 @@ $sections = array(
 	array('twitter', 'twitter', '55acee'),
 	array('works', 'works', '1f789e'),
 	array('music', 'music', 'ff8ed4'),
-	array('contact', 'contact', 'ff733b')
+	array('photos', 'photos', '5544bb'),
+	array('contact', 'contact', 'ff733b'),
 );
 
 $i = 1;
@@ -145,9 +146,10 @@ EOT;
 		<title>Ryota-ka.me</title>
 	</head>
 	<body>
-		<p id="log" style="position: fixed;top:0;left:0;z-index: 10;">0 : 0</p>
+		<p id="log" style="position: fixed;top:0;right:0;z-index: 10;">0 : 0</p>
 		<nav>
 			<ul>
+				<li></li>
 				<li></li>
 				<li></li>
 				<li></li>
@@ -241,6 +243,8 @@ EOT;
 					<p>用途未定</p>
 				</article>
 			</section>
+
+			<section id="section-photos"></section>
 
 			<section id="section-contact" class="content">
 				<article>

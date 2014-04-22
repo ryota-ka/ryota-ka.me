@@ -2,10 +2,12 @@ $(function() {
 	var windowHeight = $(window).height();
 	var sectionHeight = windowHeight + 199;
 	$('section').css('height', sectionHeight + 'px');
+	$('#container').css('width', ($(window).width() - 75) + 'px');
 	$(window).resize(function() {
 		windowHeight = $(window).height();
 		sectionHeight = windowHeight + 199;
 		$('section').css('height', sectionHeight + 'px');
+		$('#container').css('width', ($(window).width() - 75) + 'px');
 	});
 
 	var nav = $('nav');
@@ -16,12 +18,13 @@ $(function() {
 	var tweets = $('.tweet');
 	var tweetsPosY = [150, 120, 70, 100, 70, -30, -30, -50, -100, -70];
 
-	$(nav).mouseover(function() {
-		$(nav).animate({left: '0px'}, 300);
-	}).mouseleave(function() {
-		$(nav).animate({left: '-58px'}, 300);
-	});
-
+	/*
+	 nav.mouseover(function() {
+	 nav.clearQueue().animate({left: '0px'}, 300);
+	 }).mouseleave(function() {
+	 nav.clearQueue().animate({left: '-58px'}, 300);
+	 });
+	 */
 	var len = navButtons.length;
 	for (var i = 0; i < len; i++) {
 		$(navButtons[i]).click({index: i}, function(event) {
