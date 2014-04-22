@@ -12,7 +12,6 @@ $(function() {
 
 	var nav = $('nav');
 	var $navButtons = $('nav').find('li');
-	var $aboutme = $('#section-aboutme').find('h2');
 	var $profilePicture = $('#profile_picture');
 	var $links = $('#findmeontheweb').children('.link-wrapper');
 	var $tweets = $('.tweet');
@@ -52,17 +51,7 @@ $(function() {
 
 		//nav.css('padding-top', 100 - (100 * scroll / ($(document).height() - windowHeight)) + 'px');
 
-		/* --- aboutme --- */
-		$aboutme.css('right', (function(scroll) {
-			if (scroll < sectionHeight - 50) {
-				return -50;
-			} else if (scroll < sectionHeight) {
-				return (scroll - sectionHeight - 50) / 50;
-			} else {
-				return 50;
-			}
-		})(scroll) + 'px');
-
+		/* --- profile picture --- */
 		$($profilePicture).css({opacity: (function(scroll) {
 				if (scroll < 200) {
 					return 0;
@@ -78,6 +67,7 @@ $(function() {
 					return 50;
 				}
 			})(scroll) + 'px'});
+		/* --- profile picture --- */
 
 		/* --- find me on the web --- */
 		var len = $links.length;
