@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
 	<head>
 		<meta charset="utf-8" />
+		<meta property="og:title" content="Ryota-ka.me" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="http://ryota-ka.me/" />
+		<meta property="og:image" content="http://ryota-ka.me/img/ogp_thumbnail.png" />
+		<meta property="og:description" content="Ryota-ka.me : Ryota Kameoka" />
+		<meta property="og:site_name" content="Ryota-ka.me/">
 		<style type="text/css">
 <?php
 date_default_timezone_set('Asia/Tokyo');
@@ -103,7 +109,6 @@ foreach ($sites as $site) {
 	border-radius: 48px;
 	background-color: rgba(0,0,0,0.2);
 	text-align: center;
-	line-hegiht: 96px;
 	font-size: 1.2em;
 	text-decoration: none;
 }

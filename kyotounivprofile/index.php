@@ -177,9 +177,9 @@
 		<hr />
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
-			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onchange="checkValid()" />
+			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="checkValid()" />
 			<p>学生用メールアドレス</p>
-			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onchange="checkValid()" />
+			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="checkValid()" />
 			<p class="right">@st.kyoto-u.ac.jp</p>
 			<p>メールの表示名 (任意)</p>
 			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など" />

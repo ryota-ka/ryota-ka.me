@@ -11,11 +11,11 @@ $(function() {
 	});
 
 	var nav = $('nav');
-	var navButtons = $('nav li');
-	var aboutme = $('#section-aboutme h2');
-	var profilePicture = $('#profile_picture');
-	var links = $('#findmeontheweb > .link-wrapper');
-	var tweets = $('.tweet');
+	var $navButtons = $('nav').find('li');
+	var $aboutme = $('#section-aboutme').find('h2');
+	var $profilePicture = $('#profile_picture');
+	var $links = $('#findmeontheweb').children('.link-wrapper');
+	var $tweets = $('.tweet');
 	var tweetsPosY = [150, 120, 70, 100, 70, -30, -30, -50, -100, -70];
 
 	/*
@@ -25,9 +25,9 @@ $(function() {
 	 nav.clearQueue().animate({left: '-58px'}, 300);
 	 });
 	 */
-	var len = navButtons.length;
+	var len = $navButtons.length;
 	for (var i = 0; i < len; i++) {
-		$(navButtons[i]).click({index: i}, function(event) {
+		$($navButtons[i]).click({index: i}, function(event) {
 			$('html, body').animate({scrollTop: event.data.index * sectionHeight}, 500);
 		});
 	}
@@ -53,7 +53,7 @@ $(function() {
 		//nav.css('padding-top', 100 - (100 * scroll / ($(document).height() - windowHeight)) + 'px');
 
 		/* --- aboutme --- */
-		aboutme.css('right', (function(scroll) {
+		$aboutme.css('right', (function(scroll) {
 			if (scroll < sectionHeight - 50) {
 				return -50;
 			} else if (scroll < sectionHeight) {
@@ -63,20 +63,26 @@ $(function() {
 			}
 		})(scroll) + 'px');
 
-		$(profilePicture).css('opacity', (function(scroll) {
-			if (scroll < 200) {
-				return 0;
-			} else if (scroll < sectionHeight) {
-				return (scroll - 200) / windowHeight;
-			} else {
-				return 1;
-			}
-		})(scroll));
+		$($profilePicture).css({opacity: (function(scroll) {
+				if (scroll < 200) {
+					return 0;
+				} else if (scroll < sectionHeight - 200) {
+					return (scroll - 200) / windowHeight;
+				} else {
+					return 1;
+				}
+			})(scroll), top: (function(scroll) {
+				if (scroll < sectionHeight - 200) {
+					return 50 + 0.6 * (sectionHeight - 200 - scroll);
+				} else {
+					return 50;
+				}
+			})(scroll) + 'px'});
 
 		/* --- find me on the web --- */
-		var len = links.length;
+		var len = $links.length;
 		for (var i = 0; i < len; i++) {
-			$(links[i]).css('bottom', (function(index, scroll) {
+			$($links[i]).css('bottom', (function(index, scroll) {
 				if (scroll > 1100) {
 					return 16;
 					var pos = (scroll - 1100) * (0.6 + 0.1 * (6 - index)) + 16;
@@ -104,9 +110,9 @@ $(function() {
 			if (percent > 2.2) {
 				percent = 2.2;
 			}
-			var len = tweets.length;
+			var len = $tweets.length;
 			for (var i = 0; i < len; i++) {
-				$(tweets[i]).css('bottom', tweetsPosY[i] + 100 * (percent * (1 + 0.25 * (i - 5)) - 0.8) + '%');
+				$($tweets[i]).css('bottom', tweetsPosY[i] + 100 * (percent * (1 + 0.25 * (i - 5)) - 0.8) + '%');
 			}
 		}
 		/* --- tweets --- */
