@@ -170,25 +170,25 @@ EOT;
 
 			<section id="section-aboutme" class="content">
 				<div id="myname">
-					<p style="font-size: 2em; margin-bottom: 8px;">Ryota&nbsp;Kameoka</p>
-					<p style="padding-left: 1.8em;"><span style="font-size: 1.8em">亀岡 亮太</span>&nbsp;<span style="font-size: 1.65em;">/</span>&nbsp;<span style="font-size: 1.5em">カメオカ リョウタ</span></p>
+					<p style="font-size: 2.5em; margin-bottom: 12px;">Ryota&nbsp;Kameoka</p>
+					<p style="font-size: 1.7em; padding-left: 1em;">亀岡&nbsp;亮太 /&nbsp;カメオカ&nbsp;リョウタ</p>
 				</div>
 				<div id="profile">
 					<div>
 						<p style="background-image: url('./img/icons/profile/birthday.png');">birthday</p>
-						<p>1993.06.07 (age 20)</p>
+						<p>1993.06.07 (age&nbsp;20)</p>
 					</div>
 					<div>
 						<p style="background-image: url('./img/icons/profile/location.png');">location</p>
-						<p>sakyo, kyoto</p>
+						<p>ichijōji, sakyo, kyoto</p>
 					</div>
 					<div>
 						<p style="background-image: url('./img/icons/profile/hometown.png');">hometown</p>
-						<p>osaka, kishiwada</p>
+						<p>kishiwada, osaka</p>
 					</div>
 					<div>
 						<p style="background-image: url('./img/icons/profile/education.png');">education</p>
-						<p>kyoto university (faculty of cconomics)</p>
+						<p>kyoto&nbsp;university (faculty&nbsp;of&nbsp;economics)</p>
 					</div>
 				</div>
 				<p id="profile_picture"><img src="./img/profile_picture.jpg" width="240" height="240" alt="プロフィール写真" /></p>

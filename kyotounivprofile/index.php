@@ -117,7 +117,7 @@
 			}
 		</style>
 		<script type="text/javascript">
-			function checkValid() {
+			function validate() {
 				var ecsid = document.getElementById('input-ecsid');
 				var localpart = document.getElementById('input-localpart');
 				var submit = document.getElementById('input-submit');
@@ -177,9 +177,9 @@
 		<hr />
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
-			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="checkValid()" />
+			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="validate();" />
 			<p>学生用メールアドレス</p>
-			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="checkValid()" />
+			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate();" />
 			<p class="right">@st.kyoto-u.ac.jp</p>
 			<p>メールの表示名 (任意)</p>
 			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など" />
