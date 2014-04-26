@@ -36,8 +36,8 @@ $sections = array(
 	array('about me', 'aboutme', '45cdab'),
 	array('twitter', 'twitter', '55acee'),
 	array('works', 'works', '1f789e'),
-	array('music', 'music', 'ff8ed4'),
-	array('photos', 'photos', '5544bb'),
+//	array('music', 'music', 'ff8ed4'),
+//	array('photos', 'photos', '5544bb'),
 	array('contact', 'contact', 'ff733b'),
 );
 
@@ -138,8 +138,6 @@ EOT;
 				<li></li>
 				<li></li>
 				<li></li>
-				<li></li>
-				<li></li>
 			</ul>
 		</nav>
 		<div id="container">
@@ -228,7 +226,7 @@ EOT;
 					<div class="product-wrapper">
 						<div class="product">
 							<p class="image" style="background-image: url('/img/icons/works/20x20.png');"></p>
-							<p class="name"><a href="./20x20/">20x20</a></p>
+							<p class="name"><a href="./20x20/">20x20 (準備中)</a></p>
 							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>
 						</div>
 					</div>
@@ -236,19 +234,30 @@ EOT;
 					<div class="product-wrapper dummy"><div class="product"></div></div>
 				</div>
 			</section>
+			<?php /*
+			  <section id="section-music" class="content">
+			  <article>
+			  <p>用途未定</p>
+			  </article>
+			  </section>
 
-			<section id="section-music" class="content">
-				<article>
-					<p>用途未定</p>
-				</article>
-			</section>
-
-			<section id="section-photos"></section>
-
+			  <section id="section-photos"></section>
+			 */ ?>
 			<section id="section-contact" class="content">
 				<article>
-					mail : noise0607@gmail.com
+					mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
+					Twitter : <a href="http://twitter.com/invendu">@invendu</a><br>
+					Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a>
 				</article>
+				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+				<!-- ryota-ka.me -->
+				<ins class="adsbygoogle"
+					 style="display:inline-block;width:728px;height:90px"
+					 data-ad-client="ca-pub-6807892574075028"
+					 data-ad-slot="7583709395"></ins>
+				<script>
+					(adsbygoogle = window.adsbygoogle || []).push({});
+				</script>
 			</section>
 		</div>
 	</body>

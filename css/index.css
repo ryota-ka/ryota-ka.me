@@ -302,3 +302,15 @@ h1 {
 #section-contact {
 	background-color: #ff733b;
 }
+
+#section-contact article {
+	padding-top: 50px;
+	padding-left: 50px;
+	color: #fff;
+	font-size: 1.4em;
+	line-height: 1.7em;
+}
+
+#section-contact article a {
+	color: #fff;
+}
