@@ -172,6 +172,7 @@
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by <a href="http://ryota-ka.me/">Ryota Kameoka</a></p>
 		<p>入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
+		<p><a href="safari://ryota-ka.me/kyotounivprofile/">Safari で開く</a><br><a href="chrome://ryota-ka.me/kyotounivprofile/">Chrome で開く</a></p>
 		<hr>
 		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 		<!-- kyotounivprofile -->
