@@ -125,12 +125,10 @@ EOT;
 ?>
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script type="text/javascript" src="./js/jquery.transit.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
 	</head>
 	<body>
-		<p id="log" style="position: fixed;top:0;right:0;z-index: 10;">0 : 0</p>
 		<nav>
 			<ul>
 				<li></li>
@@ -219,15 +217,17 @@ EOT;
 					<div class="product-wrapper">
 						<div class="product" href="./kyotounivprofile/">
 							<p class="image" style="background-image: url('/img/icons/works/kyotounivprofile.png');"></p>
-							<p class="name"><a href="./kyotounivprofile/">KyotoUnivProfile</a></p>
+							<p class="name">KyotoUnivProfile</p>
 							<p class="description">入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
+							<a href="./kyotounivprofile/"></a>
 						</div>
 					</div>
 					<div class="product-wrapper">
 						<div class="product">
 							<p class="image" style="background-image: url('/img/icons/works/20x20.png');"></p>
-							<p class="name"><a href="./20x20/">20x20 (準備中)</a></p>
+							<p class="name">20x20 (準備中)</p>
 							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>
+							<a href=""></a>
 						</div>
 					</div>
 					<div class="product-wrapper dummy"><div class="product"></div></div>

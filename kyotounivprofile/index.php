@@ -183,7 +183,7 @@
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
 		<hr>
-		<p>Safari 以外のブラウザでは正常に動作しませんので、Chrome for iOS, ドルフィンブラウザ などをお使いの方は、Safari でアクセスしてください。</p>
+		<p>Safari 以外のブラウザでは正常に動作しませんので、Chrome for iOS, ドルフィンブラウザ などをお使いの方は、Safari でのアクセスをお願いします。</p>
 		<hr>
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>

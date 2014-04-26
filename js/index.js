@@ -10,20 +10,12 @@ $(function() {
 		$('#container').css('width', ($(window).width() - 75) + 'px');
 	});
 
-	var nav = $('nav');
 	var $navButtons = $('nav').find('li');
 	var $profilePicture = $('#profile_picture');
 	var $links = $('#findmeontheweb').children('a');
 	var $tweets = $('.tweet');
 	var tweetsPosY = [150, 120, 70, 100, 70, -30, -30, -50, -100, -70];
 
-	/*
-	 nav.mouseover(function() {
-	 nav.clearQueue().animate({left: '0px'}, 300);
-	 }).mouseleave(function() {
-	 nav.clearQueue().animate({left: '-58px'}, 300);
-	 });
-	 */
 	var len = $navButtons.length;
 	for (var i = 0; i < len; i++) {
 		$($navButtons[i]).click({index: i}, function(event) {
@@ -32,7 +24,7 @@ $(function() {
 	}
 
 	$('.product').click(function() {
-		$(this).text($(this).children('a').attr('href'));
+		location.href($(this).find('a').attr('href'));
 	});
 	/*
 	 var len = links.length;
@@ -47,9 +39,6 @@ $(function() {
 	 */
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
-		$('#log').text($(window).height() + ' : ' + scroll);
-
-		//nav.css('padding-top', 100 - (100 * scroll / ($(document).height() - windowHeight)) + 'px');
 
 		/* --- profile picture --- */
 		$($profilePicture).css({opacity: (function(scroll) {
@@ -90,7 +79,7 @@ $(function() {
 				} else {
 					return 0;
 				}
-			})(scroll, i) + 'px');//.css('transform', 'perspective(1000px) rotateY(' + scroll + 'deg)');
+			})(scroll, i) + 'px');
 		}
 		/* --- find me on the web --- */
 
