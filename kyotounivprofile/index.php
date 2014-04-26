@@ -173,7 +173,15 @@
 		<p class="right">by <a href="http://ryota-ka.me/">Ryota Kameoka</a></p>
 		<p>入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
 		<hr>
-		<p>ads here ...</p>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- kyotounivprofile -->
+		<ins class="adsbygoogle"
+			 style="display:inline-block;width:320px;height:50px"
+			 data-ad-client="ca-pub-6807892574075028"
+			 data-ad-slot="4630242999"></ins>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
 		<hr>
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
