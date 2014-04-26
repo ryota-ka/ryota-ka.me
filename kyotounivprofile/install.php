@@ -111,8 +111,7 @@
 				width: 95%;
 				margin-top: 10px;
 				margin-bottom: 0;
-				margin-left: auto;
-				margin-right: auto;
+				margin-left: 2.5%;
 				max-width: 640px;
 			}
 		</style>

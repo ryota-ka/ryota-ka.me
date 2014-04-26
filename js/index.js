@@ -26,17 +26,7 @@ $(function() {
 	$('.product').click(function() {
 		location.href($(this).find('a').attr('href'));
 	});
-	/*
-	 var len = links.length;
-	 for (var i = 0; i < len; i++) {
-	 $(links[i]).click(function() {
-	 $(this).clearQueue().transition({rotateY: '180deg', top: '-400px', left: '-200px'}, 700);
-	 return false;
-	 });//.mouseleave(function() {
-	 //	$(this).clearQueue().transition({rotateY: '0deg', y: '0px'}, 700);
-	 //});
-	 }
-	 */
+
 	$(window).scroll(function() {
 		var scroll = $(this).scrollTop();
 
