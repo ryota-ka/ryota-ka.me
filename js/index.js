@@ -13,7 +13,7 @@ $(function() {
 	var nav = $('nav');
 	var $navButtons = $('nav').find('li');
 	var $profilePicture = $('#profile_picture');
-	var $links = $('#findmeontheweb').children('.link-wrapper');
+	var $links = $('#findmeontheweb').children('a');
 	var $tweets = $('.tweet');
 	var tweetsPosY = [150, 120, 70, 100, 70, -30, -30, -50, -100, -70];
 

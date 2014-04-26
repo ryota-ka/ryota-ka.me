@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja" prefix="og: http://ogp.me/ns#">
 	<head>
-		<meta charset="utf-8" />
-		<meta property="og:title" content="Ryota-ka.me" />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://ryota-ka.me/" />
-		<meta property="og:image" content="http://ryota-ka.me/img/ogp_thumbnail.png" />
-		<meta property="og:description" content="Ryota-ka.me : Ryota Kameoka" />
+		<meta charset="utf-8">
+		<meta property="og:title" content="Ryota-ka.me">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://ryota-ka.me/">
+		<meta property="og:image" content="http://ryota-ka.me/img/ogp_thumbnail.png">
+		<meta property="og:description" content="Ryota-ka.me : Ryota Kameoka">
 		<meta property="og:site_name" content="Ryota-ka.me">
 		<style type="text/css">
 <?php
@@ -21,7 +21,7 @@ $accessToken = $_ENV['TWITTER_ACCESS_TOKEN'];
 $accessTokenSecret = $_ENV['TWITTER_ACCESS_TOKEN_SECRET'];
 
 $twObj = new TwitterOAuth($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
-$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('user_id' => '974006168', 'count' => '10'));
+$req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.json', 'GET', array('user_id' => '974006168', 'count' => '10', 'exclude_replies' => true));
 $tw_arr = json_decode($req);
 /* --- Twitter settings --- */
 
@@ -91,29 +91,7 @@ foreach ($sites as $site) {
 	background-image: url('/img/icons/findmeontheweb/{$site[1]}.png');
 }
 
-#link-{$site[1]}-back {
-		background-image: url('/img/icons/findmeontheweb/{$site[1]}.png');
 
-	background-color: #{$site[3]};
-}
-
-#link-{$site[1]}:hover::before {
-	content: '{$site[0]}';
-	display: block;
-	color: #fff;
-	position: relative;
-	top: 0;
-	left: 0;
-	width: 96px;
-	height: 96px;
-	border-radius: 48px;
-	background-color: rgba(0,0,0,0.2);
-	text-align: center;
-	font-size: 1.2em;
-	text-decoration: none;
-}
-EOT;
-	/*
 	  #link-{$site[1]}:hover::before {
 	  content: '{$site[0]}';
 	  display: block;
@@ -141,7 +119,8 @@ EOT;
 	  border-top: 12px #{$site[3]} solid;
 	  border-left: 8px solid transparent;
 	  border-right: 8px solid transparent;
-	  } */
+	  }
+EOT;
 }
 ?>
 		</style>
@@ -191,11 +170,11 @@ EOT;
 						<p>kyoto&nbsp;university (faculty&nbsp;of&nbsp;economics)</p>
 					</div>
 				</div>
-				<p id="profile_picture"><img src="./img/profile_picture.jpg" width="240" height="240" alt="プロフィール写真" /></p>
+				<p id="profile_picture"><img src="./img/profile_picture.jpg" width="240" height="240" alt="プロフィール写真"></p>
 				<div id="findmeontheweb">
 					<?php
 					foreach ($sites as $site) {
-						echo '					<div class="link-wrapper"><a id="link-' . $site[1] . '" href="' . $site[2] . '" class="front" target="_blank"></a><a id="link-' . $site[1] . '-back" class="back">' . $site[0] . '</a></div>';
+						echo '					<a id="link-' . $site[1] . '" href="' . $site[2] . '" target="_blank"></a>';
 					}
 					?>
 				</div>
@@ -237,15 +216,17 @@ EOT;
 			</section>
 
 			<section id="section-works" class="content">
+				<h2>Works</h2>
 				<div id="products-row">
 					<div class="product-wrapper">
-						<div class="product">
+						<div class="product" href="./kyotounivprofile/">
 							<p class="image" style="background-image: url('/img/icons/works/kyotounivprofile.png');"></p>
 							<p class="name"><a href="./kyotounivprofile/">KyotoUnivProfile</a></p>
 							<p class="description">入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
 						</div>
 					</div>
-					<div class="product-wrapper"><div class="product">
+					<div class="product-wrapper">
+						<div class="product">
 							<p class="image" style="background-image: url('/img/icons/works/20x20.png');"></p>
 							<p class="name"><a href="./20x20/">20x20</a></p>
 							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>

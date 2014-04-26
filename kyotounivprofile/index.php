@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<style type="text/css">
 			@charset "utf-8";
 			html, body {
@@ -170,24 +170,24 @@
     </head>
     <body>
 		<h1>KyotoUnivProfile</h1>
-		<p class="right">by <a href="http://twitter.com/invendu">Ryota Kameoka</a></p>
+		<p class="right">by <a href="http://ryota-ka.me/">Ryota Kameoka</a></p>
 		<p>入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
-		<hr />
+		<hr>
 		<p>ads here ...</p>
-		<hr />
+		<hr>
 		<form action="file.php" method="post">
 			<p>ECS-ID</p>
-			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="validate();" />
+			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="validate();">
 			<p>学生用メールアドレス</p>
-			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate();" />
+			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate();">
 			<p class="right">@st.kyoto-u.ac.jp</p>
 			<p>メールの表示名 (任意)</p>
-			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など" />
-			<input id="input-submit" type="submit" value="ダウンロード" disabled="disabled" />
+			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など">
+			<input id="input-submit" type="submit" value="ダウンロード" disabled="disabled">
 		</form>
-		<hr />
+		<hr>
 		<p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">ダウンロード後の手順は<a href="./install.php" style="color: #666;">こちら</a></p>
-		<hr />
+		<hr>
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
 			<p>このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係ありません。</p>

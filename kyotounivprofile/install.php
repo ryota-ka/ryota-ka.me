@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 		<style type="text/css">
 			@charset "utf-8";
 			html, body {
@@ -106,14 +106,46 @@
 				margin-top: 0;
 				margin-bottom: 0;
 			}
+
+			img {
+				width: 95%;
+				margin-top: 10px;
+				margin-bottom: 0;
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 640px;
+			}
 		</style>
         <title>KyotoUnivProfile</title>
     </head>
     <body>
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by Ryota Kameoka</p>
-		<hr />
-		<hr />
+		<hr>
+		<h2>Step 1</h2>
+		<p>「インストール」ボタンをタップします</p>
+		<img src="./img/step1.png" alt="Step 1">
+		<hr>
+		<h2>Step 2</h2>
+		<p>「インストール」をタップします</p>
+		<img src="./img/step2.png" alt="Step 2">
+		<hr>
+		<h2>Step 3</h2>
+		<p>iPhone にパスコードロックがかかっている場合、パスコードを入力します。</p>
+		<img src="./img/step3.png" alt="Step 3">
+		<hr>
+		<h2>Step 4</h2>
+		<p>ECS-ID のパスワードを入力します</p>
+		<img src="./img/step4.png" alt="Step 4">
+		<hr>
+		<h2>Step 5</h2>
+		<p>Step 4 と同じパスワードを入力します</p>
+		<img src="./img/step5.png" alt="Step 5">
+		<hr>
+		<h2>Step 6</h2>
+		<p>完了ボタンを押してインストールは完了です</p>
+		<img src="./img/step6.png" alt="Step 6">
+		<hr>
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
 			<p>このアプリケーションは一個人が開発したものであり、京都大学当局とは一切関係ありません。</p>
