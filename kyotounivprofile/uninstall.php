@@ -140,32 +140,20 @@
 		</p>
 		<hr>
 		<h2>Step 1</h2>
-		<p>「インストール」ボタンをタップします。</p>
-		<img src="./img/step1.png" alt="Step 1">
+		<p>ホーム画面から 設定 &gt; 一般 &gt; プロファイル &gt; KyotoUnivProfile を選択します。</p>
+		<img src="./img/un_step1.png" alt="Step 1">
 		<hr>
 		<h2>Step 2</h2>
-		<p>「インストール」をタップします。</p>
-		<img src="./img/step2.png" alt="Step 2">
+		<p>「削除」をタップします。</p>
+		<img src="./img/un_step2.png" alt="Step 2">
 		<hr>
 		<h2>Step 3</h2>
-		<p>iPhone にパスコードロックがかかっている場合、パスコードを入力します。</p>
-		<img src="./img/step3.png" alt="Step 3">
+		<p>「削除」をタップします。</p>
+		<img src="./img/un_step3.png" alt="Step 3">
 		<hr>
 		<h2>Step 4</h2>
-		<p>ECS-ID のパスワードを入力します。</p>
-		<img src="./img/step4.png" alt="Step 4">
-		<hr>
-		<h2>Step 5</h2>
-		<p>メール(KUMOI)での表示名を入力します。</p>
-		<img src="./img/step5.png" alt="Step 5">
-		<hr>
-		<h2>Step 6</h2>
-		<p>Step 4 と同じパスワードを入力します。</p>
-		<img src="./img/step6.png" alt="Step 6">
-		<hr>
-		<h2>Step 7</h2>
-		<p>完了ボタンを押してインストールは完了です。</p>
-		<img src="./img/step6.png" alt="Step 6">
+		<p>iPhone にパスコードロックがかかっている場合、パスコードを入力します。</p>
+		<img src="./img/un_step4.png" alt="Step 4">
 		<hr>
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>

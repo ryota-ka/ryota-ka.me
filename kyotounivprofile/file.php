@@ -1,7 +1,6 @@
 <?php
 
 $ecsid = trim(filter_input(INPUT_POST, 'ecsid'));
-$name = trim(filter_input(INPUT_POST, 'name'));
 $localpart = trim(filter_input(INPUT_POST, 'localpart'));
 
 $errors = 0;
@@ -47,19 +46,6 @@ if ($errors === 0) {
 		<dict>
 			<key>EmailAccountDescription</key>
 			<string>KUMOI</string>
-
-EOT;
-	if (!empty($name)) {
-		$file .= <<< 'EOT'
-			<key>EmailAccountName</key>
-			<string>
-EOT;
-		$file .= $name;
-		$file .= <<< 'EOT'
-			</string>
-EOT;
-	}
-	$file .= <<< 'EOT'
 			<key>EmailAccountType</key>
 			<string>EmailTypeIMAP</string>
 			<key>EmailAddress</key>

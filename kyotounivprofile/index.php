@@ -115,6 +115,10 @@
 				margin-top: 0;
 				margin-bottom: 0;
 			}
+
+			.ads {
+				text-align: center;
+			}
 		</style>
 		<script type="text/javascript">
 			function validate() {
@@ -193,12 +197,13 @@
 			<p>学生用メールアドレス</p>
 			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate();">
 			<p class="right">@st.kyoto-u.ac.jp</p>
-			<p>メールの表示名 (任意)</p>
-			<input id="input-name" type="text" name="name" placeholder="京大 太郎, Taro Kyodai, など">
 			<input id="input-submit" type="submit" value="ダウンロード" disabled="disabled">
 		</form>
 		<hr>
-		<p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">ダウンロード後の手順は<a href="./install.php" style="color: #666;">こちら</a></p>
+		<p style="text-align: center; margin-top: 5px; margin-bottom: 5px;">
+			ダウンロード後の手順は<a href="./install.php" style="color: #3af;">こちら</a><br>
+			プロファイルの削除方法は<a href="./uninstall.php" style="color: #3af;">こちら</a>
+		</p>
 		<hr>
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>
