@@ -247,7 +247,8 @@ EOT;
 				<article>
 					mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
 					Twitter : <a href="http://twitter.com/invendu">@invendu</a><br>
-					Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a>
+					Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a><br>
+					Skype : <a href="skype:noise0607?userinfo">noise0607</a>
 				</article>
 				<div class="add">
 					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

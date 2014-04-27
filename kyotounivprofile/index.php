@@ -3,6 +3,13 @@
     <head>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta charset="utf-8">
+		<meta property="og:title" content="KyotoUnivProfile">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://ryota-ka.me/kyotounivprofile/">
+		<meta property="og:image" content="http://ryota-ka.me/img/icons/works/kyotounivprofile.png">
+		<meta property="og:description" content="入力された情報に基づき、Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。">
+		<meta property="og:site_name" content="Ryota-ka.me">
 		<style type="text/css">
 			@charset "utf-8";
 			html, body {
