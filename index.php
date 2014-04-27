@@ -244,20 +244,22 @@ EOT;
 			  <section id="section-photos"></section>
 			 */ ?>
 			<section id="section-contact" class="content">
-				<article style="margin-bottom: 50px;">
+				<article>
 					mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
 					Twitter : <a href="http://twitter.com/invendu">@invendu</a><br>
 					Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a>
 				</article>
-				<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-				<!-- ryota-ka.me -->
-				<ins class="adsbygoogle"
-					 style="display:inline-block;width:728px;height:90px"
-					 data-ad-client="ca-pub-6807892574075028"
-					 data-ad-slot="7583709395"></ins>
-				<script>
-					(adsbygoogle = window.adsbygoogle || []).push({});
-				</script>
+				<div class="add">
+					<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+					<!-- ryota-ka.me -->
+					<ins class="adsbygoogle"
+						 style="display:inline-block;width:728px;height:90px"
+						 data-ad-client="ca-pub-6807892574075028"
+						 data-ad-slot="7583709395"></ins>
+					<script>
+						(adsbygoogle = window.adsbygoogle || []).push({});
+					</script>
+				</div>
 			</section>
 		</div>
 	</body>

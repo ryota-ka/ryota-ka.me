@@ -319,3 +319,8 @@ h1 {
 #section-contact article a {
 	color: #fff;
 }
+
+#section-contact .add {
+	margin-top: 70px;
+	margin-left: 50px;
+}

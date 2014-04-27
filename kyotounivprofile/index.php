@@ -198,7 +198,7 @@
 			<input id="input-ecsid" type="text" name="ecsid" placeholder="a0123456" onblur="validate();">
 			<p>学生用メールアドレス</p>
 			<input id="input-localpart" type="text" name="localpart" placeholder="kyodai.taro.01a" onblur="validate();">
-			<p class="right">@st.kyoto-u.ac.jp</p>
+			<p class="right" style="color: #888;">@st.kyoto-u.ac.jp</p>
 			<input id="input-submit" type="submit" value="ダウンロード" disabled="disabled">
 		</form>
 		<hr>
