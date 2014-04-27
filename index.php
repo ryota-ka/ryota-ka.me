@@ -244,7 +244,7 @@ EOT;
 			  <section id="section-photos"></section>
 			 */ ?>
 			<section id="section-contact" class="content">
-				<article>
+				<article style="margin-bottom: 50px;">
 					mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
 					Twitter : <a href="http://twitter.com/invendu">@invendu</a><br>
 					Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a>

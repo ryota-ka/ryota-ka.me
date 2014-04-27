@@ -56,13 +56,15 @@ EOT;
 EOT;
 		$file .= $name;
 		$file .= <<< 'EOT'
-</string>
+			</string>
+EOT;
+	}
+	$file .= <<< 'EOT'
 			<key>EmailAccountType</key>
 			<string>EmailTypeIMAP</string>
 			<key>EmailAddress</key>
 			<string>
 EOT;
-	}
 	$file .= $localpart;
 	$file .= <<< 'EOT'
 @st.kyoto-u.ac.jp</string>

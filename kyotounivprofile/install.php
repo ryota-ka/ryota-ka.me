@@ -107,6 +107,10 @@
 				margin-bottom: 0;
 			}
 
+			h2 {
+				margin-left: 10px;
+			}
+
 			img {
 				width: 95%;
 				margin-top: 10px;
@@ -114,21 +118,27 @@
 				margin-left: 2.5%;
 				max-width: 640px;
 			}
+
+			.ads {
+				text-align: center;
+			}
 		</style>
         <title>KyotoUnivProfile</title>
     </head>
     <body>
 		<h1>KyotoUnivProfile</h1>
 		<p class="right">by Ryota Kameoka</p>
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<!-- kyotounivprofile -->
-		<ins class="adsbygoogle"
-			 style="display:inline-block;width:320px;height:50px"
-			 data-ad-client="ca-pub-6807892574075028"
-			 data-ad-slot="4630242999"></ins>
-		<script>
-			(adsbygoogle = window.adsbygoogle || []).push({});
-		</script>
+		<p class="ads">
+			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+			<!-- kyotounivprofile -->
+			<ins class="adsbygoogle"
+				 style="display:inline-block;width:320px;height:50px"
+				 data-ad-client="ca-pub-6807892574075028"
+				 data-ad-slot="4630242999"></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
+		</p>
 		<hr>
 		<h2>Step 1</h2>
 		<p>「インストール」ボタンをタップします</p>
