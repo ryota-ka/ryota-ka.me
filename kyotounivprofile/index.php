@@ -118,6 +118,8 @@
 
 			.ads {
 				text-align: center;
+				margin: 10px 0;
+				padding: 0;
 			}
 		</style>
 		<script type="text/javascript">

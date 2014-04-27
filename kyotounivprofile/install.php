@@ -121,6 +121,8 @@
 
 			.ads {
 				text-align: center;
+				padding: 0;
+				margin: 10px 0;
 			}
 		</style>
         <title>KyotoUnivProfile</title>
