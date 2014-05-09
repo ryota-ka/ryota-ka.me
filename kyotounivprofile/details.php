@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<meta charset="utf-8">
 		<style type="text/css">
 			@charset "utf-8";
 			html, body {
@@ -31,8 +32,9 @@
 				color: #fff;
 			}
 
-			h1 + p {
-				margin: 5px 0;
+			a {
+				color: #bbb;
+				text-decoration: underline;
 			}
 
 			hr {
@@ -47,37 +49,6 @@
 				margin-right: auto;
 			}
 
-			input {
-				width: 90%;
-				height: 28px;
-				margin: auto;
-				padding: 2px 10px;
-				border: 1px solid #ddd;
-				border-radius: 7px;
-				display: block;
-				font-size: 16px;
-				vertical-align: middle;
-				-webkit-appearance: none;
-			}
-
-			#input-ecsid {
-				margin-bottom: 20px;
-			}
-
-			form {
-				padding: 0 5px;
-			}
-
-			form p {
-				font-size: 18px;
-				margin-top: 5px;
-				margin-bottom: 3px;
-			}
-
-			input + p:not(.right) {
-				margin-top: 5px;
-			}
-
 			p.right {
 				text-align: right;
 				font-size: 16px;
@@ -85,20 +56,11 @@
 				color: #bbb;
 			}
 
-			input[type="submit"] {
-				width: 70%;
-				height: 48px;
-				border-width: 0;
-				margin-top: 20px;
-				background: #3af;
-				color: #fff;
-			}
-
 			#policy {
 				font-size: 12px;
 				color: #bbb;
-				padding-left: 3px;
-				padding-right: 3px;
+				padding-left: 5px;
+				padding-right: 5px;
 			}
 
 			#policy p {
@@ -107,28 +69,19 @@
 				margin-bottom: 0;
 			}
 
-			h2 {
-				margin-left: 10px;
-			}
-
-			img {
-				width: 95%;
-				margin-top: 10px;
-				margin-bottom: 0;
-				margin-left: 2.5%;
-				max-width: 640px;
-			}
-
 			.ads {
 				text-align: center;
-				padding: 0;
 				margin: 10px 0;
+				padding: 0;
 			}
 		</style>
-        <title>KyotoUnivProfile</title>
+        <title>このアプリができること</title>
     </head>
     <body>
-		<h1><a href="./" style="color: #fff; text-decoration: none;">KyotoUnivProfile</a></h1>
+		<h1>KyotoUnivProfile</h1>
+		<p class="right">by <a href="http://ryota-ka.me/">Ryota Kameoka</a></p>
+		<p></p>
+		<hr>
 		<p class="ads">
 			<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 			<!-- kyotounivprofile -->
@@ -137,37 +90,14 @@
 				 data-ad-client="ca-pub-6807892574075028"
 				 data-ad-slot="4630242999"></ins>
 			<script>
-				(adsbygoogle = window.adsbygoogle || []).push({});
+			(adsbygoogle = window.adsbygoogle || []).push({});
 			</script>
 		</p>
 		<hr>
-		<h2>Step 1</h2>
-		<p>「インストール」ボタンをタップします。</p>
-		<img src="./img/step1.png" alt="Step 1">
-		<hr>
-		<h2>Step 2</h2>
-		<p>「インストール」をタップします。</p>
-		<img src="./img/step2.png" alt="Step 2">
-		<hr>
-		<h2>Step 3</h2>
-		<p>iPhone にパスコードロックがかかっている場合、パスコードを入力します。</p>
-		<img src="./img/step3.png" alt="Step 3">
-		<hr>
-		<h2>Step 4</h2>
-		<p>ECS-ID のパスワードを入力します。</p>
-		<img src="./img/step4.png" alt="Step 4">
-		<hr>
-		<h2>Step 5</h2>
-		<p>メール(KUMOI)での表示名を入力します。</p>
-		<img src="./img/step5.png" alt="Step 5">
-		<hr>
-		<h2>Step 6</h2>
-		<p>Step 4 と同じパスワードを入力します。</p>
-		<img src="./img/step6.png" alt="Step 6">
-		<hr>
-		<h2>Step 7</h2>
-		<p>完了ボタンを押してインストールは完了です。</p>
-		<img src="./img/step7.png" alt="Step 6">
+		<h2>このアプリができること</h2>
+		<p>
+			このアプリはかくかくしかじかということができます！！
+		</p>
 		<hr>
 		<div id="policy">
 			<p>入力されたすべての情報は、iPhone 構成プロファイルの作成のみに使用され、サーバーに保存されたり、第三者に情報が送信されることはありません。</p>

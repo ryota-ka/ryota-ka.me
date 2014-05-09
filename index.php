@@ -242,7 +242,8 @@ EOT;
 			  </section>
 
 			  <section id="section-photos"></section>
-			 */ ?>
+			 */
+			?>
 			<section id="section-contact" class="content">
 				<article>
 					mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
