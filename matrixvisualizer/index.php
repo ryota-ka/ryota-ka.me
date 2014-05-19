@@ -134,6 +134,8 @@
       .parenthesis {
         font-size: 88px;
         width: 30px;
+        height: 88px;
+        line-height: 88px;
       }
 
       form, .parenthesis {
