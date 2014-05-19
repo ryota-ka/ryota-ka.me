@@ -227,7 +227,7 @@ EOT;
 							<p class="image" style="background-image: url('/img/icons/works/matrixvisualizer.png');"></p>
 							<p class="name">Matrix Visualizer</p>
 							<p class="description">2x2行列による平面上の線形変換を可視化します。</p>
-							<a href="./matrixvisualizer/"></a>
+							<a href="./matrixvisualizer/index.html"></a>
 						</div>
 					</div>
 					<div class="product-wrapper dummy"><div class="product"></div></div>
