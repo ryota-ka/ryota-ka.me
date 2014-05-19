@@ -224,10 +224,10 @@ EOT;
 					</div>
 					<div class="product-wrapper">
 						<div class="product">
-							<p class="image" style="background-image: url('/img/icons/works/20x20.png');"></p>
-							<p class="name">20x20 (準備中)</p>
-							<p class="description">20の段までの掛け算の練習ができます。目指せダルシム！</p>
-							<a href=""></a>
+							<p class="image" style="background-image: url('/img/icons/works/matrixvisualizer.png');"></p>
+							<p class="name">Matrix Visualizer</p>
+							<p class="description">2x2行列による平面上の線形変換を可視化します。</p>
+							<a href="./matrixvisualizer/"></a>
 						</div>
 					</div>
 					<div class="product-wrapper dummy"><div class="product"></div></div>
