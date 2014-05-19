@@ -1,7 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta property="og:title" content="Matrix Visualizer">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="http://ryota-ka.me/matrixvisualizer/">
+    <meta property="og:image" content="http://ryota-ka.me/img/icons/works/matrixvisualizer.png">
+    <meta property="og:description" content="2x2行列による平面上の線形変換を可視化します。">
+    <meta property="og:site_name" content="Ryota-ka.me">
     <script type="text/javascript">
       var canvas, ctx, a, b, c, d;
       var matrix = {a: 1, b: 0, c: 0, d: 1};
