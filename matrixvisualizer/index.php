@@ -156,25 +156,13 @@
               eigenVector[1][1] = matrix.c / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
             }
 
-            /*
-            if (Math.round((matrix.a - eigenValue[0]) / matrix.c * 10000) != Math.round(eigenVector[0][0] / eigenVector[0][1] * 10000)) {
-              console.log('swapped [' + matrix.a + ', ' + matrix.b + ', ' + matrix.c + ', ' + matrix.d + ']');
-              var temp0 = eigenVector[0][0];
-              var temp1 = eigenVector[0][1];
-              eigenVector[0][0] = eigenVector[1][0];
-              eigenVector[0][1] = eigenVector[1][1];
-              eigenVector[1][0] = temp0;
-              eigenVector[1][1] = temp1;
-            }
-            */
-
             document.getElementById('eigenvalues').textContent = 'eigenvalue' + (eigenValue[0] == eigenValue[1] ? ': ' + Math.round(eigenValue[0] * 1000) / 1000 : 's: ' + Math.round(eigenValue[0] * 1000) / 1000 + ', ' + Math.round(eigenValue[1] * 1000) / 1000);
             if (matrix.det === 0) {
               if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
                 eigenVector[0][0] = eigenVector[1][0];
                 eigenVector[0][1] = eigenVector[1][1];
               }
-              if (isNumeric(eigenVector[0][0])) {
+              if (isNumeric(eigenVector[0][0]) && !(matrix.a === 0 && matrix.b === 0 && matrix.c === 0 && matrix.d === 0)) {
                 document.getElementById('eigenvectors').textContent = 'eigenvector: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + ')';
               } else {
                 document.getElementById('eigenvectors').textContent = '';
@@ -195,7 +183,15 @@
               if (isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
                 document.getElementById('eigenvectors').textContent = 'eigenvectors: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + '), (' + Math.round(eigenVector[1][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[1][1] * 1000) / 1000 + ')';
               } else {
-                document.getElementById('eigenvectors').textContent = '';
+                if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
+                  eigenVector[0][0] = eigenVector[1][0];
+                  eigenVector[0][1] = eigenVector[1][1];
+                }
+                if (isNumeric(eigenVector[0][0])) {
+                  document.getElementById('eigenvectors').textContent = 'eigenvector: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + ')';
+                } else {
+                  document.getElementById('eigenvectors').textContent = '';
+                }
               }
             }
           } else {
