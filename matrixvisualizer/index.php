@@ -156,7 +156,7 @@
 
             document.getElementById('eigenvalues').textContent = 'eigenvalue' + (eigenValue[0] == eigenValue[1] ? ': ' + Math.round(eigenValue[0] * 1000) / 1000 : 's: ' + Math.round(eigenValue[0] * 1000) / 1000 + ', ' + Math.round(eigenValue[1] * 1000) / 1000);
             if (matrix.det === 0 || (eigenValue[0] == eigenValue[1])) {
-              if (eigenVector[0][0] === NaN) {
+              if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
                 eigenVector[0] = eigenVector[1];
               }
               if (isNumeric(eigenVector[0][0])) {
