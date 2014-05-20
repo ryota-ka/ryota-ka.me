@@ -25,8 +25,7 @@
         d = document.getElementById('matrix_d');
 
         resize();
-
-        draw();
+        calc();
 
         canvas.addEventListener('click', function() {
           shapeType++;
@@ -41,7 +40,7 @@
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, canvas.width * 0.5, canvas.height * 0.5);
+        ctx.setTransform(matrix.a, -matrix.b, matrix.c, -matrix.d, canvas.width * 0.5, canvas.height * 0.5);
 
         if (matrix.det > 0) {
           ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
@@ -141,29 +140,57 @@
 
           if (discriminant >= 0) {
             var rootd = Math.sqrt(discriminant);
-            eigenValue[0] = (matrix.tr + rootd) * 0.5;
-            eigenValue[1] = (matrix.tr - rootd) * 0.5;
-            eigenVector[0][0] = matrix.b / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
-            eigenVector[0][1] = (matrix.d - eigenValue[1]) / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
-            eigenVector[1][0] = (matrix.a - eigenValue[0]) / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
-            eigenVector[1][1] = matrix.c / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
-
-            if (Math.round((matrix.a - eigenValue[0]) / matrix.c * 100) != Math.round(eigenVector[0][0] / eigenVector[0][1] * 100)) {
-              var temp = eigenVector[0];
-              eigenVector[0] = eigenVector[1];
-              eigenVector[1] = temp;
+            if (matrix.b === 0 && matrix.c === 0) {
+              eigenValue[0] = matrix.d;
+              eigenValue[1] = matrix.a;
+              eigenVector[0][0] = 0;
+              eigenVector[0][1] = 1;
+              eigenVector[1][0] = 1;
+              eigenVector[1][1] = 0;
+            } else {
+              eigenValue[0] = (matrix.tr + rootd) * 0.5;
+              eigenValue[1] = (matrix.tr - rootd) * 0.5;
+              eigenVector[0][0] = matrix.b / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
+              eigenVector[0][1] = (matrix.d - eigenValue[1]) / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
+              eigenVector[1][0] = (matrix.a - eigenValue[0]) / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
+              eigenVector[1][1] = matrix.c / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
             }
 
+            /*
+            if (Math.round((matrix.a - eigenValue[0]) / matrix.c * 10000) != Math.round(eigenVector[0][0] / eigenVector[0][1] * 10000)) {
+              console.log('swapped [' + matrix.a + ', ' + matrix.b + ', ' + matrix.c + ', ' + matrix.d + ']');
+              var temp0 = eigenVector[0][0];
+              var temp1 = eigenVector[0][1];
+              eigenVector[0][0] = eigenVector[1][0];
+              eigenVector[0][1] = eigenVector[1][1];
+              eigenVector[1][0] = temp0;
+              eigenVector[1][1] = temp1;
+            }
+            */
+
             document.getElementById('eigenvalues').textContent = 'eigenvalue' + (eigenValue[0] == eigenValue[1] ? ': ' + Math.round(eigenValue[0] * 1000) / 1000 : 's: ' + Math.round(eigenValue[0] * 1000) / 1000 + ', ' + Math.round(eigenValue[1] * 1000) / 1000);
-            if (matrix.det === 0 || (eigenValue[0] == eigenValue[1])) {
+            if (matrix.det === 0) {
               if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
-                eigenVector[0] = eigenVector[1];
+                eigenVector[0][0] = eigenVector[1][0];
+                eigenVector[0][1] = eigenVector[1][1];
               }
               if (isNumeric(eigenVector[0][0])) {
                 document.getElementById('eigenvectors').textContent = 'eigenvector: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + ')';
               } else {
                 document.getElementById('eigenvectors').textContent = '';
               }
+            } else if (eigenValue[0] == eigenValue[1]) {
+              if (matrix.a !== 0 && matrix.a === matrix.d && matrix.b === 0 && matrix.c === 0) {
+                document.getElementById('eigenvectors').textContent = 'eigenvectors: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + '), (' + Math.round(eigenVector[1][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[1][1] * 1000) / 1000 + ')';
+              } else {
+                if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
+                  eigenVector[0][0] = eigenVector[1][0];
+                  eigenVector[0][1] = eigenVector[1][1];
+                }
+                if (isNumeric(eigenVector[0][0])) {
+                  document.getElementById('eigenvectors').textContent = 'eigenvector: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + ')';
+                }
+               }
             } else {
               if (isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
                 document.getElementById('eigenvectors').textContent = 'eigenvectors: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + '), (' + Math.round(eigenVector[1][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[1][1] * 1000) / 1000 + ')';
