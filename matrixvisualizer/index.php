@@ -41,14 +41,18 @@
 
         ctx.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, canvas.width * 0.5, canvas.height * 0.5);
 
+        if (matrix.a * matrix.d - matrix.b * matrix.c > 0) {
+          ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
+        } else {
+          ctx.fillStyle = 'rgba(255, 64, 64, 0.7)';
+        }
+
         switch (shapeType) {
           case 0:
-            ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
             ctx.beginPath();
             ctx.fillRect(-100, -100, 200, 200);
             break;
           case 1:
-            ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
             ctx.beginPath();
             ctx.arc(0, 0, 100, 0, 2 * Math.PI);
             ctx.fill();
