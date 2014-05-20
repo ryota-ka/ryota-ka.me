@@ -10,7 +10,9 @@
     <meta property="og:site_name" content="Ryota-ka.me">
     <script type="text/javascript">
       var canvas, ctx, a, b, c, d;
-      var matrix = {a: 1, b: 0, c: 0, d: 1};
+      var matrix = {a: 1, b: 0, c: 0, d: 1, det: 1, tr: 2};
+      var eigenValue = [1, 1];
+      var eigenVector = [[0, 0], [0, 0]];
       var shapeType = 0;
 
       window.onload = function() {
@@ -41,7 +43,7 @@
 
         ctx.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, canvas.width * 0.5, canvas.height * 0.5);
 
-        if (matrix.a * matrix.d - matrix.b * matrix.c > 0) {
+        if (matrix.det > 0) {
           ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
         } else {
           ctx.fillStyle = 'rgba(255, 64, 64, 0.7)';
@@ -61,6 +63,18 @@
 
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         drawGrid();
+
+        ctx.setTransform(1, 0, 0, 1, canvas.width * 0.5, canvas.height * 0.5);
+        ctx.strokeStyle = 'rgba(64, 64, 255, 0.9)';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(-50 * eigenValue[0] * eigenVector[0][0], 50 * eigenValue[0] * eigenVector[0][1]);
+        ctx.lineTo(50 * eigenValue[0] * eigenVector[0][0], -50 * eigenValue[0] * eigenVector[0][1]);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(-50 * eigenValue[1] * eigenVector[1][0], 50 * eigenValue[1] * eigenVector[1][1]);
+        ctx.lineTo(50 * eigenValue[1] * eigenVector[1][0], -50 * eigenValue[1] * eigenVector[1][1]);
+        ctx.stroke();
       }
 
       function resize() {
@@ -118,7 +132,47 @@
           matrix.b = parseFloat(b.value);
           matrix.c = parseFloat(c.value);
           matrix.d = parseFloat(d.value);
-          draw()
+          matrix.det = matrix.a * matrix.d - matrix.b * matrix.c;
+          matrix.tr = matrix.a + matrix.d;
+          document.getElementById('det').textContent = 'determinant: ' + Math.round(matrix.det * 1000) / 1000;
+          document.getElementById('tr').textContent = 'trace: ' + Math.round(matrix.tr * 1000) / 1000;
+
+          var discriminant = matrix.tr * matrix.tr - 4 * matrix.det;
+
+          if (discriminant >= 0) {
+            var rootd = Math.sqrt(discriminant);
+            eigenValue[0] = (matrix.tr + rootd) * 0.5;
+            eigenValue[1] = (matrix.tr - rootd) * 0.5;
+            eigenVector[0][0] = matrix.b / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
+            eigenVector[0][1] = (matrix.d - eigenValue[1]) / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
+            eigenVector[1][0] = (matrix.a - eigenValue[0]) / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
+            eigenVector[1][1] = matrix.c / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
+            document.getElementById('eigenvalues').textContent = 'eigenvalue' + (eigenValue[0] == eigenValue[1] ? ': ' + Math.round(eigenValue[0] * 1000) / 1000 : 's: ' + Math.round(eigenValue[0] * 1000) / 1000 + ', ' + Math.round(eigenValue[1] * 1000) / 1000);
+            if (matrix.det === 0 || (eigenValue[0] == eigenValue[1])) {
+              if (eigenVector[0][0] === NaN) {
+                eigenVector[0] = eigenVector[1];
+              }
+              if (isNumeric(eigenVector[0][0])) {
+                document.getElementById('eigenvectors').textContent = 'eigenvector: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + ')';
+              } else {
+                document.getElementById('eigenvectors').textContent = '';
+              }
+            } else {
+              if (isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
+                document.getElementById('eigenvectors').textContent = 'eigenvectors: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + '), (' + Math.round(eigenVector[1][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[1][1] * 1000) / 1000 + ')';
+              } else {
+                document.getElementById('eigenvectors').textContent = '';
+              }
+            }
+          } else {
+            var rootd = Math.sqrt(-discriminant);
+            document.getElementById('eigenvalues').textContent = 'eigenvalues: ' + Math.round(matrix.tr * 500) / 1000 + ' ±' + Math.round(matrix.tr * 500) / 1000 + 'i';
+            document.getElementById('eigenvectors').textContent = '';
+            eigenValue = [0, 0];
+            eigenVector = [[0, 0], [0, 0]];
+          }
+
+          draw();
         }
       }
 
@@ -145,6 +199,17 @@
         background-color: black;
       }
 
+      #info {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        width: 226px;
+        height: 150px;
+        z-index: 1;
+        background-color: rgba(225, 225, 225, 0.9);
+        padding: 5px;
+      }
+
       #panel {
         position: absolute;
         right: 5%;
@@ -161,6 +226,7 @@
         width: 30px;
         height: 88px;
         line-height: 88px;
+        margin: 4px 0;
       }
 
       form, .parenthesis {
@@ -191,6 +257,12 @@
   </head>
   <body>
     <canvas id="canvas"></canvas>
+    <div id="info">
+      <p id="det">determinant: 1</p>
+      <p id="tr">trace: 2</p>
+      <p id="eigenvalues">eigenvalue: 1</p>
+      <p id="eigenvectors"></p>
+    </div>
     <div id="panel">
       <p class="parenthesis">(</p>
       <form>
