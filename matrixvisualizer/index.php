@@ -147,6 +147,13 @@
             eigenVector[0][1] = (matrix.d - eigenValue[1]) / Math.sqrt(matrix.b * matrix.b + (matrix.d - eigenValue[1]) * (matrix.d - eigenValue[1]));
             eigenVector[1][0] = (matrix.a - eigenValue[0]) / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
             eigenVector[1][1] = matrix.c / Math.sqrt(matrix.c * matrix.c + (matrix.a - eigenValue[0]) * (matrix.a - eigenValue[0]));
+
+            if (Math.round((matrix.a - eigenValue[0]) / matrix.c * 100) != Math.round(eigenVector[0][0] / eigenVector[0][1] * 100)) {
+              var temp = eigenVector[0];
+              eigenVector[0] = eigenVector[1];
+              eigenVector[1] = temp;
+            }
+
             document.getElementById('eigenvalues').textContent = 'eigenvalue' + (eigenValue[0] == eigenValue[1] ? ': ' + Math.round(eigenValue[0] * 1000) / 1000 : 's: ' + Math.round(eigenValue[0] * 1000) / 1000 + ', ' + Math.round(eigenValue[1] * 1000) / 1000);
             if (matrix.det === 0 || (eigenValue[0] == eigenValue[1])) {
               if (eigenVector[0][0] === NaN) {
