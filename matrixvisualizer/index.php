@@ -11,6 +11,7 @@
     <script type="text/javascript">
       var canvas, ctx, a, b, c, d;
       var matrix = {a: 1, b: 0, c: 0, d: 1};
+      var shapeType = 0;
 
       window.onload = function() {
         canvas = document.getElementById('canvas');
@@ -24,6 +25,14 @@
         resize();
 
         draw();
+
+        canvas.addEventListener('click', function() {
+          shapeType++;
+          if (shapeType === 2) {
+            shapeType = 0;
+          }
+          draw();
+        });
       }
 
       function draw() {
@@ -31,9 +40,20 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         ctx.setTransform(matrix.a, matrix.b, matrix.c, matrix.d, canvas.width * 0.5, canvas.height * 0.5);
-        ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
-        ctx.beginPath();
-        ctx.fillRect(-100, -100, 200, 200);
+
+        switch (shapeType) {
+          case 0:
+            ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
+            ctx.beginPath();
+            ctx.fillRect(-100, -100, 200, 200);
+            break;
+          case 1:
+            ctx.fillStyle = 'rgba(64, 255, 64, 0.7)';
+            ctx.beginPath();
+            ctx.arc(0, 0, 100, 0, 2 * Math.PI);
+            ctx.fill();
+            break;
+        }
 
         ctx.setTransform(1, 0, 0, 1, 0, 0);
         drawGrid();
@@ -71,7 +91,7 @@
 
         for (var i = 1; i < canvas.height / 100; i++) {
           ctx.beginPath();
-          ctx.moveTo(0 ,canvas.height * 0.5 + 50 * i);
+          ctx.moveTo(0, canvas.height * 0.5 + 50 * i);
           ctx.lineTo(canvas.width, canvas.height * 0.5 + 50 * i);
           ctx.closePath();
           ctx.stroke();
@@ -109,6 +129,7 @@
       window.onkeypress = function() {
         calc();
       }
+
     </script>
     <style type="text/css">
       * {
