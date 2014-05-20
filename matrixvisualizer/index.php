@@ -181,7 +181,7 @@
               }
             } else if (eigenValue[0] == eigenValue[1]) {
               if (matrix.a !== 0 && matrix.a === matrix.d && matrix.b === 0 && matrix.c === 0) {
-                document.getElementById('eigenvectors').textContent = 'eigenvectors: (' + Math.round(eigenVector[0][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[0][1] * 1000) / 1000 + '), (' + Math.round(eigenVector[1][0] * 1000) / 1000 + ', ' + Math.round(eigenVector[1][1] * 1000) / 1000 + ')';
+                document.getElementById('eigenvectors').textContent = 'eigenvectors: any vectors';
               } else {
                 if (!isNumeric(eigenVector[0][0]) && isNumeric(eigenVector[1][0])) {
                   eigenVector[0][0] = eigenVector[1][0];
