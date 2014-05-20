@@ -25,10 +25,6 @@ $req = $twObj->OAuthRequest('https://api.twitter.com/1.1/statuses/user_timeline.
 $tw_arr = json_decode($req);
 /* --- Twitter settings --- */
 
-
-include_once './css/reset.css';
-include_once './css/index.css';
-
 /* --- navigation and sections --- */
 
 $sections = array(
@@ -124,6 +120,8 @@ EOT;
 }
 ?>
 		</style>
+    <link rel="stylesheet" href="./css/reset.css" type="text/css">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script type="text/javascript" src="./js/index.js"></script>
 		<title>Ryota-ka.me</title>
