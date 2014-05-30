@@ -1,0 +1,190 @@
+body {
+  font-family: 'Open Sans', 'HiraKakuProN-W3', san-serif;
+  font-weight: 300;
+}
+
+section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+section h2 {
+  font-weight: normal;
+  font-size: 2.5em;
+  color: #fff;
+  padding-left: 20px;
+}
+
+/* --- navigation --- */
+nav {
+  display: none;
+}
+
+/* --- logo section --- */
+#section-logo {
+  display: none;
+  background-color: #ffcb4c;
+}
+
+h1 {
+  font-size: 72px;
+  color: #fff;
+  bottom: 10%;
+  right: 5%;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+
+/* --- aboutme section ---*/
+#section-aboutme {
+  background-color: #45cdab;
+}
+
+#section-aboutme h2 {
+  font-size: 3em;
+  color: #fff;
+  font-weight: normal;
+}
+
+#profile_picture {
+  width: 242px;
+  height: 242px;
+  margin: 0px auto;
+  margin-bottom: 20px;
+}
+
+#profile_picture img {
+  border: 5px solid #fff;
+}
+
+#myname {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#myname span {
+  display: inline-block;
+  text-align: left;
+}
+
+#profile {
+  color: #fff;
+  font-size: 1.3em;
+  margin-left: 20px;
+}
+
+#profile div p:first-child {
+  height: 22px;
+  line-height: 22px;
+  font-size: 18px;
+  background-position-x: 0;
+  background-position-y: 0px;
+  background-repeat: no-repeat;
+  padding-left: 22px;
+  margin-bottom: 1px;
+}
+
+#profile div p:last-child {
+  padding-left: 15px;
+  font-size: 20px;
+  margin-bottom: 15px;
+  line-height: 23px;
+}
+
+#findmeontheweb {
+  font-size: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+
+#findmeontheweb a {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  border-radius: 32px;
+  margin: 4px;
+  background-size: 100%;
+}
+
+
+/* --- twitter section --- */
+#section-twitter {
+  display: none;
+}
+
+
+/* --- works section --- */
+
+#section-works {
+  background-color: #1f789e;
+}
+
+.product {
+  position: relative;
+  width: 95%;
+  height: 128px;
+  margin: 20px auto 0 auto;
+  background-color: #f8f8f8;
+}
+
+.product .image {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 112px;
+  height: 112px;
+  background-size: 100%;
+}
+
+.product .name {
+  position: absolute;
+  top: 8px;
+  left: 124px;
+  font-size: 1.2em;
+  padding-left: 5px;
+  color: #444;
+  font-weight: bold;
+}
+
+.product .description {
+  position: absolute;
+  top: 32px;
+  left: 132px;
+  padding-right: 3px;
+  color: #444;
+  font-size: 0.9em;
+  line-height: 1.2em;
+}
+
+.product a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+
+/* --- contact section --- */
+
+#section-contact {
+  background-color: #ff733b;
+}
+
+#section-contact article {
+  margin-top: 20px;
+  padding-left: 30px;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.7em;
+}
+
+#section-contact article a {
+  color: #fff;
+}
+
+#section-contact .ad {
+  display: none;
+}

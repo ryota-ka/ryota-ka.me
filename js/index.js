@@ -5,7 +5,7 @@ $(function() {
   $(window).resize(function() {
     windowHeight = $(window).height();
     sectionHeight = windowHeight + 199;
-    $('section').css('height', sectionHeight + 'px');
+    $('section').css('min-height', sectionHeight + 'px');
   });
 
   var $navButtons = $('nav').find('li');
@@ -17,7 +17,7 @@ $(function() {
   var len = $navButtons.length;
   for (var i = 0; i < len; i++) {
     $($navButtons[i]).click({index: i}, function(event) {
-      $('html, body').animate({scrollTop: event.data.index * sectionHeight}, 500);
+      $('html, body').animate({scrollTop: $('section:nth-of-type(' + (event.data.index + 1) + ')').offset().top}, 500);
     });
   }
 

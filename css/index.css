@@ -43,10 +43,18 @@ nav ul li {
 
 section {
   position: relative;
-  height: 900px;
+  min-height: 900px;
   width: 100%;
 }
 
+section h2 {
+  font-weight: normal;
+  font-size: 2.5em;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  right: 5%;
+}
 
 /* --- logo section --- */
 #section-logo {
@@ -127,8 +135,12 @@ h1 {
 #findmeontheweb {
   position: fixed;
   left: 100px;
-  bottom: 16px;
+  bottom: 0;
+  height: 112px;
+  font-size: 0;
+  overflow: hidden;
 }
+
 #findmeontheweb a {
   display: block;
   cursor: pointer;
@@ -212,21 +224,7 @@ h1 {
   background-color: #1f789e;
 }
 
-#section-works h2 {
-  font-weight: normal;
-  font-size: 2.5em;
-  color: #fff;
-  position: absolute;
-  top: 30px;
-  right: 5%;
-}
-
-#products-row {
-  top: 100px;
-}
-
 .product {
-  display: block;
   position: relative;
   width: 240px;
   height: 360px;
@@ -245,12 +243,6 @@ h1 {
   background-color: #fe6;
 }
 
-.product-wrapper.dummy .product {
-  background-color: transparent;
-  border-width: 0px;
-  box-shadow: none;
-}
-
 .product .image {
   position: absolute;
   top: 8px;
@@ -258,6 +250,7 @@ h1 {
   width: 224px;
   height: 224px;
   border: solid 1px #bbb;
+  background-size: 100%;
 }
 
 .product .name {
