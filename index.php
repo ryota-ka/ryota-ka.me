@@ -225,7 +225,7 @@ foreach ($sites as $site) {
         <section id="section-contact" class="content">
           <h2>Contact</h2>
           <article>
-            mail : <a href="mailto:noise0607@gmail.com">noise0607@gmail.com</a><br>
+            mail : <a href="mailto:kameoka.ryota@gmail.com">kameoka.ryota@gmail.com</a><br>
             Twitter : <a href="http://twitter.com/invendu">@invendu</a><br>
             Facebook : <a href="http://www.facebook.com/kameoka.ryota">Ryota Kameoka</a><br>
             Skype : <a href="skype:noise0607?userinfo">noise0607</a>
