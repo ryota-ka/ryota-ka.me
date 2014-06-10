@@ -210,6 +210,12 @@ foreach ($sites as $site) {
               <p class="description">2×2行列による平面上の線形変換を可視化します。</p>
               <a href="./matrixvisualizer/"></a>
             </div>
+            <div class="product">
+              <p class="image" style="background-image: url('./20x20/20x20.png');"></p>
+              <p class="name">20x20</p>
+              <p class="description">20×20までの掛け算を練習できます。目指せダルシム！</p>
+              <a href="./20x20/"></a>
+            </div>
           </div>
         </section>
         <?php /*
