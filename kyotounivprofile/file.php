@@ -6,13 +6,13 @@ $localpart = trim(filter_input(INPUT_POST, 'localpart'));
 $errors = 0;
 
 if (!preg_match('/^a0[0-9]{6,6}$/', $ecsid)) {
-	$errors += 1;
+  $errors += 1;
 }
 if (!preg_match('/^[a-z]+\.[a-z]+\.[a-z0-9]{3,3}$/', $localpart)) {
-	$errors += 2;
+  $errors += 2;
 }
 if ($errors === 0) {
-	$file = <<<'EOT'
+  $file = <<<'EOT'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -51,8 +51,8 @@ if ($errors === 0) {
 			<key>EmailAddress</key>
 			<string>
 EOT;
-	$file .= $localpart;
-	$file .= <<< 'EOT'
+  $file .= $localpart;
+  $file .= <<< 'EOT'
 @st.kyoto-u.ac.jp</string>
 			<key>IncomingMailServerAuthentication</key>
 			<string>EmailAuthPassword</string>
@@ -65,8 +65,8 @@ EOT;
 			<key>IncomingMailServerUsername</key>
 			<string>
 EOT;
-	$file .= $ecsid;
-	$file .= <<< 'EOT'
+  $file .= $ecsid;
+  $file .= <<< 'EOT'
 @st.kyoto-u.ac.jp</string>
 			<key>OutgoingMailServerAuthentication</key>
 			<string>EmailAuthPassword</string>
@@ -79,8 +79,8 @@ EOT;
 			<key>OutgoingMailServerUsername</key>
 			<string>
 EOT;
-	$file .= $ecsid;
-	$file .= <<< 'EOT'
+  $file .= $ecsid;
+  $file .= <<< 'EOT'
 @st.kyoto-u.ac.jp</string>
 			<key>OutgoingPasswordSameAsIncomingPassword</key>
 			<true/>
@@ -118,8 +118,8 @@ EOT;
 				<key>AuthName</key>
 				<string>
 EOT;
-	$file .= $ecsid;
-	$file .= <<< 'EOT'
+  $file .= $ecsid;
+  $file .= <<< 'EOT'
 </string>
 				<key>CCPEnabled</key>
 				<integer>1</integer>
@@ -178,9 +178,9 @@ EOT;
 
 EOT;
 
-	header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
-	header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
-	echo $file;
+  header('Content-type: application/x-apple-aspen-config; chatset=utf-8');
+  header('Content-Disposition: attachment; filename="kyoto_univ_profile_' . $ecsid . '.mobileconfig"');
+  echo $file;
 } else {
-	echo 'invalid values!';
+  echo 'invalid values!';
 }

@@ -199,13 +199,13 @@ foreach ($sites as $site) {
           <h2>Works</h2>
           <div id="products">
             <div class="product" href="./kyotounivprofile/">
-              <p class="image" style="background-image: url('./img/icons/works/kyotounivprofile.png');"></p>
+              <p class="image" style="background-image: url('./kyotounivprofile/kyotounivprofile.png');"></p>
               <p class="name">KyotoUnivProfile</p>
               <p class="description">Wi-Fi (MIAKO), VPN (KUINS-PPTP), 学生用メール (KUMOI) の設定を一括で行う iPhone 構成プロファイルを作成します。</p>
               <a href="./kyotounivprofile/"></a>
             </div>
             <div class="product">
-              <p class="image" style="background-image: url('./matrixvisualizer/icon.png');"></p>
+              <p class="image" style="background-image: url('./matrixvisualizer/matrixvisualizer.png');"></p>
               <p class="name">Matrix Visualizer</p>
               <p class="description">2×2行列による平面上の線形変換を可視化します。</p>
               <a href="./matrixvisualizer/"></a>
